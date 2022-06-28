@@ -283,7 +283,7 @@
                 $("header .right").toggleClass("show");
             });
             // 모바일에서 대메뉴 클릭시 바로 이동 아니고 소메뉴 나옴
-            $("header .gnb li .h4 a").attr("href","#");
+            $("header .gnb li .h4 a:lt(3)").attr("href","#");
             $("header .gnb li").click(function(){  
                 $(this).children("header .gnb li .sub").slideToggle();
                 $("header .gnb li").not(this).children("header .gnb li .sub").slideUp();
