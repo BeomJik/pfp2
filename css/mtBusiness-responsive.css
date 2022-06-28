@@ -1,0 +1,146 @@
+@media (max-width: 768px){
+    header h1.h1 a{
+        color: #000;
+    }
+    header .allmenu span{
+        background-color: #000;
+    }
+    header .allmenu::after{
+        background-color: #000;
+    }
+    header .allmenu::before {
+        background-color: #000;
+    } 
+    #title { 
+        height: fit-content;
+        margin: 150px 0 50px 0; 
+    }
+    #title .wrap{
+        padding: 0;
+    }
+    #title h2.h2{
+        font-size: 50px;
+        font-weight: 500;
+    }   
+    section .wrap{
+        padding: 0;
+        flex-direction: column;
+        justify-content: initial;
+    }
+    section .wrap .h2Wrap{        
+        width:  100% !important;
+    }
+    section .wrap .h2Wrap .h2{
+        font-size: 40px;
+        font-weight: 500;
+    }
+    #function .wrap {
+        padding: 0;
+    }
+    #function .txtA {
+        width: 100%;
+        font-size: 20px;
+        padding: 100px 15px 30px;
+    }
+
+    #function .imgA{
+        width: 100%;    
+        padding: 0;        
+    }
+    #business .wrap{        
+        margin: 100px auto 0;
+        padding: 0 0 80px 0;
+        flex-direction: column;
+    }
+    #business .p{
+        width: 98%;
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 1.4;
+        letter-spacing: 0;
+    }
+    #mainItems .wrap{
+        padding: 50px 0;
+    }
+    #mainItems .list{
+        width: 100%;
+    }
+    #mainItems .list li{        
+        margin: 0;
+        width: calc(50% - 20px);
+        margin: 40px 10px;
+    }
+    #affiliate{
+        padding: 100px 0;
+    }
+    #affiliate .afList{
+        width: 100%;
+    }
+    #affiliate .afList li .h3{        
+        font-size: 20px;
+    }
+    #affiliate .afList li .slideA{
+        flex-direction: column;
+    }
+    #affiliate .afList li a{
+        width: 100%;
+    }
+    #affiliate .afList li a img{
+        padding: 20px 0;
+    }
+    #affiliate .afList li .p{        
+        padding: 0 0 20px;
+        font-weight: 300;
+    }
+    #afLo .map{
+        width: calc(100% - 60px);
+        padding: 50px 0;
+        margin: 0 auto;
+    }
+    #afLo .map .dotA:nth-child(2){
+        top: 11%;
+        left: -10%;
+    }
+
+    #afLo .map .dotA:nth-child(3){
+        top: 40%;
+        left: 42%;
+    }
+
+    #afLo .map .dotA:nth-child(4){
+        top: 7%;
+        left: 60%;
+    }
+    #afLo .map .dotA .p{
+        font-size: 16px;
+        padding: 10px;
+        width: 100%;
+    }
+    #inquiry{
+        height: auto;
+    }
+    #inquiry .mtinquiry a{
+        
+    padding: 50px;
+        }
+    #inquiry .mtinquiry a .h2{
+        font-size: 30px;
+        font-weight: 600;
+    }
+    #inquiry .mtinquiry a .h2::after{
+        
+    width: 15px;
+    height: 15px;
+    transform: rotate(45deg) translateX(5px) translateY(-10px);
+    }
+    #inquiry .mtinquiry a .phone, 
+    #inquiry .mtinquiry a .email{
+        margin: 5px 0;
+    }
+    #inquiry .mtinquiry a .email span:nth-of-type(2){
+        display: block;
+        text-align: end;
+        margin: 5px;
+    }
+
+}

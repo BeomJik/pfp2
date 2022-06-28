@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pfp2-풍림무약</title>
+    <!-- 파비콘 -->
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="css/reset.css" type="text/css">
+    <!-- 구글폰트 noto sans korean -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">  
+    <!-- 스위퍼 css -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>  
+    <!-- css -->
+    <link rel="stylesheet" href="css/common.css" type="text/css">
+    <link rel="stylesheet" href="css/header.css" type="text/css">
+    <link rel="stylesheet" href="css/title.css" type="text/css">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link rel="stylesheet" href="css/footer.css" type="text/css">
+    <link rel="stylesheet" href="css/responsive.css" type="text/css">
+    <link rel="stylesheet" href="css/swiper-arrow.css" type="text/css">
+    <!-- 제이쿼리 cdn -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- 스위퍼 JS --> 
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <!-- 부트스트랩 css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- 부트스트랩 js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- 제이쿼리 -->
+    <script>
+        $(function(){
+
+            // 변수
+            mainTop = $("main").offset().top;
+            mainBusinessTop = $("main section:eq(1)").offset().top;
+            pharmaceuticals = $("main #pharmaceuticals");
+            trade = $("main #trade");
+            tradeBusiness1 = $("main #trade hgroup h2.h2:eq(0)");
+            tradeBusiness2 = $("main #trade hgroup h2.h2:eq(1)");
+            pharmaceuticalsBusiness1 = $("main #pharmaceuticals hgroup h2.h2:eq(0)");
+            pharmaceuticalsBusiness2 = $("main #pharmaceuticals hgroup h2.h2:eq(1)");
+            more = $("main #trade .more, main #pharmaceuticals .more");
+            // 스크롤 이벤트
+            $(window).scroll(function(){
+                windowTop = $(window).scrollTop();
+                // 스크롤 내리면 대메뉴 올라감
+                if(windowTop > mainBusinessTop - 50 ){
+                    $("header").addClass("slideHeader");
+                }
+                if(windowTop < mainBusinessTop - 50 ){
+                    $("header").removeClass("slideHeader");
+                }
+            });
+
+            // 타이틀 애니메이션
+            $("#title .slide .t"+tSN).children().not("iframe").addClass("slideUp");
+            var tSN= $(".swiper-pagination-bullet-active").index() + 1;
+            $("#title .slide .t"+tSN).siblings().children().not("iframe").removeClass("slideUp");
+            $("#title .slide .t"+tSN).children().not("iframe").addClass("slideUp");
+            setInterval(titleAni,0);
+            function titleAni () {
+                tSN= $(".swiper-pagination-bullet-active").index() + 1;
+                $("#title .slide .t"+tSN).siblings().children().not("iframe").removeClass("slideUp");
+                $("#title .slide .t"+tSN).children().not("iframe").addClass("slideUp");
+            }
+
+            // 사업부분 제목 클릭시 위치 이동
+            $(tradeBusiness1).click(function(){
+                $("html,body").animate({scrollTop : mainBusinessTop + 50 });
+                return false;
+            });
+            $(tradeBusiness2).click(function(){
+                $("html,body").animate({scrollTop : mainBusinessTop + 50 });
+                return false;
+            });
+            $(pharmaceuticalsBusiness1).click(function(){
+                $("html,body").animate({scrollTop : mainBusinessTop + 50 });
+                return false;
+            });
+            $(pharmaceuticalsBusiness2).click(function(){
+                $("html,body").animate({scrollTop : mainBusinessTop + 50 });
+                return false;
+            });
+
+            // 제약사업 부분 hide
+            $(pharmaceuticals).hide();
+            // 무역사업 제목 addclass
+            $(tradeBusiness1).addClass("red");
+
+            // 무역사업 부분 제목 클릭시 show 및 addClass, 제약사업 hide 및 removeClas
+            $(pharmaceuticalsBusiness1).click(function(){
+                $(pharmaceuticals).hide();
+                $(trade).show();
+                $(tradeBusiness1).addClass("red");
+                $(pharmaceuticalsBusiness2).removeClass("blue");
+                $(more).removeClass("blue");
+                $(more).addClass("red");
+                return false;
+            });
+            // 제약사업 부분 제목 클릭시 show 및 addClass, 제약사업 hide 및 removeClas .more
+            $(tradeBusiness2).click(function(){
+                $(trade).hide();
+                $(pharmaceuticals).show();                
+                $(pharmaceuticalsBusiness2).addClass("blue");
+                $(tradeBusiness1).removeClass("red");
+                $(more).removeClass("red");
+                $(more).addClass("blue");
+                return false;
+            });
+
+            // 전체 셀렉트 클릭시 화살표 돌아감
+            $("main #search div.search").not(this).click(function(){
+                $(this).removeClass("rot180");
+            }); 
+            $("main #search div.search").click(function(){
+                $(this).toggleClass("rot180");
+            }); 
+              
+        });
+    </script>
+    <!-- 타이틀 슬라이드 -->
+    <script>
+        $(function(){
+            var swiper = new Swiper("#title .swiper", {            
+                effect: "fade",
+                loop: true,
+                navigation: {
+                    nextEl: "#title .swiper-button-next",
+                    prevEl: "#title .swiper-button-prev",
+                },
+                pagination: {
+                    el: "#title .swiper-pagination",
+                    clickable: true,
+                },
+                autoplay: {
+                    delay: 10000,
+                    disableOnInteraction: false,
+                },
+            });
+        });
+    </script>
+    <!-- 나아갑니다 슬라이드 -->
+    <script>
+        $(function(){
+            // 반응형 swiper
+            let ww = window.innerWidth;
+            let swiper;
+
+            responsiveSwiper();
+
+            function initSwiper(effect) {
+            if (typeof(swiper) == 'object') swiper.destroy();
+            
+            return swiper = new Swiper('#go .swiper', {
+                loop: true,
+                spaceBetween: 20,
+                slidesPerView: 1,
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+                fadeEffect: { 
+                    crossFade: true 
+                },
+                navigation: {
+                    nextEl: "#go .swiper-button-next",
+                    prevEl: "#go .swiper-button-prev",
+                },
+                pagination: {
+                    el: "#go .swiper-pagination",
+                    clickable: true,
+                },
+                effect: effect
+            })
+            }
+
+            function responsiveSwiper() {
+            if (ww > 768) {
+                // 슬라이드 효과
+                initSwiper('fade');
+            } else if (ww < 769) {
+                // 페이드 효과
+                initSwiper('slide');
+            }
+            }
+
+            window.addEventListener('resize', function() {
+                ww = window.innerWidth;
+                responsiveSwiper();
+            });
+        });
+    </script>
+    <!-- 나아갑니다 -->
+    <script>
+        $(function(){
+            // 번호 카운트
+            $("#go .goSlideBtnA").after("<div class='count'><span class='cCount'></span><span class='tCount'></span></div>");
+
+            var cNumber = $("#go .swiper-pagination-bullet-active").index() + 1;
+            // 전체 카운트
+            $("#go .tCount").text("0"+$("#go .swiper-pagination-bullet").length);
+            // 카운트 증가
+            $("#go .cCount").text("0"+cNumber);
+            
+            setInterval(goCount,0);
+            function goCount (){
+                var cNumber = $("#go .swiper-pagination-bullet-active").index() + 1;
+                // 카운트 증가
+                $("#go .cCount").text("0"+cNumber);
+            }
+        });
+    </script>
+</head>
+<body>
+    <!-- 상단 영역 -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="wrap container-fluid">
+                <h1 class="h1 navbar-brand">
+                    <a href="index.html">풍림무약주식회사</a>
+                </h1>
+                <a href="" class="allmenu">전체메뉴<span></span></a>
+                <div class="right collapse navbar-collapse" id="navbarNav">
+                    <ul class="gnb navbar-nav">
+                        <li class="nav-item">
+                            <h2 class="h4"><a href="aboutus.html">회사소개</a></h2>
+                            <ul class="sub">
+                                <li><a href="aboutus.html">회사소개</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <h2 class="h4"><a href="tradeIntro.html">무역사업</a></h2>
+                            <ul class="sub">
+                                <li><a href="tradeIntro.html">소개</a></li>
+                                <li><a href="mtBusiness.html">기능 재료 사업</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <h2 class="h4"><a href="pharmaceuticalsIntro.html">제약사업</a></h2>
+                            <ul class="sub">
+                                <li><a href="pharmaceuticalsIntro.html">소개</a></li>
+                                <li><a href="CDMO.html">CDMO사업</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <h2 class="h4"><a href="">뉴스룸</a></h2>
+                        </li>
+                        <li class="nav-item">
+                            <h2 class="h4"><a href="">채용</a></h2>
+                        </li>
+                        <li class="nav-item">
+                            <h2 class="h4"><a href="">문의</a></h2>
+                        </li>
+                    </ul>
+                    <ul class="enb navbar-nav">
+                        <li class="nav-item"><a href="" class="search">검색</a></li>
+                        <li class="nav-item"><a href="" class="lang">언어</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <script>
+        let ww = window.innerWidth;
+        window.addEventListener('resize', function() {
+            ww = window.innerWidth;
+        });
+        // 반응형
+        if( ww < 769 ){
+            $("header .allmenu").css("display","flex");
+            // 서브메뉴 표시(햄버거 버튼)
+            $("header .allmenu").click(function(e){
+                e.preventDefault();
+                // 햄버거 버튼 모양 변경
+                $(this).toggleClass("x");
+                $("header .navbar").toggleClass("show");
+                // 대메뉴 나오게
+                $("header .right").toggleClass("show");
+            });
+            // 모바일에서 대메뉴 클릭시 바로 이동 아니고 소메뉴 나옴
+            $("header .gnb li .h4 a").attr("href","#");
+            $("header .gnb li").click(function(){  
+                $(this).children("header .gnb li .sub").slideToggle();
+                $("header .gnb li").not(this).children("header .gnb li .sub").slideUp();
+            });
+        }
+            // 스크롤 이벤트
+            $(window).scroll(function(){
+                windowTop = $(window).scrollTop();
+                if(windowTop > 50){
+                    $("header").addClass("move");
+                    // 스크롤 내리면 대메뉴 사라짐
+                    $("header .allmenu").removeClass("x");
+                    $("header .navbar").removeClass("show");
+                    $("header .right").removeClass("show");
+                }
+                if(windowTop < 50){
+                    $("header").removeClass("move");
+                }
+                if(windowTop > 500){
+                    $("header").addClass("moveUp");
+                    $("header .right").addClass("hide");
+                }
+                if(windowTop < 500){
+                    $("header").removeClass("moveUp");
+                    $("header .right").removeClass("hide");
+                }
+            });
+        
+        
+    </script>
+    <!-- 타이틀 영역 -->
+    <div id="title">
+        <div class="wrap">
+            <div class="tSildeBtnA">
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+            <div class="swiper tSlide container mySwiper">
+                <ul class="swiper-wrapper slide">
+                    <li class="swiper-slide t1">
+                        <iframe src="https://player.vimeo.com/video/644174707?background=1" title="" allow="autoplay; fullscreen" allowfullscreen="" data-ready="true" width="1902" height="664" frameborder="0"></iframe>
+                    </li>
+                    <li class="swiper-slide t2">
+                        <h2 class="h1">RICHWOOD<br>PHARMACEUTICALS</h2>
+                        <p class="h5">
+                            풍림무약주식회사는 국내외 제약사와 협업하며 독자적인 기술력과 최첨단 생산설비,<br>
+                            엄격한 품질관리 시스템을 통해 고객사의 다양한 필요를 충족하는 의약품을 공급해 왔습니다.
+                        </p>
+                        <a href="" class="view more">view more</a>
+                    </li>
+                    <li class="swiper-slide t3">
+                        <h2 class="h1">RICHWOOD TRADING</h2>
+                        <p class="h5">
+                            고부가가치 제품을 공급하며 기업과 기업,  기업과 세상을 연결하는 역할을 수행하고 있습니다.<br>
+                            풍림무약 주식회사는 고객사의 성공을 지원하는 든든한 파트너로 우리 모두를 위한 내일을 열어 갑니다.
+                        </p>
+                        <a href="" class="view more">view more</a>
+                    </li>
+                    <li class="swiper-slide t4">
+                        <h2 class="h1">RICHWOOD</h2>
+                        <p class="h5">
+                            맑은 공기를 만드는 울창한 숲처럼<br>
+                            건강한 사회를 만드는 풍림무약주식회사입니다.
+                        </p>
+                        <a href="" class="view more">view more</a>
+                    </li>
+                </ul>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // 반응형
+        if( window.innerWidth < 769 ){
+            // 타이틀 카운트
+            $("#title .swiper").append("<div class='count'><span class='cCount'></span><span class='tCount'></span></div>");
+
+            var TNumber = $("#title .swiper-pagination-bullet-active").index() + 1;
+            // 전체 카운트
+            $("#title .tCount").text("0"+$("#title .slide li").length);
+            // 카운트 증가
+            $("#title .cCount").text("0"+TNumber);
+            
+            setInterval(count,0);
+            function count (){
+                var TNumber = $("#title .swiper-pagination-bullet-active").index() + 1;
+                // 카운트 증가
+                $("#title .cCount").text("0"+TNumber);
+            }
+        }
+    </script>
+    <!-- 내용 영역 -->
+    <main>
+        <!-- 나아갑니다 -->
+        <section id="go" class="padding-t60 padding-b60">
+            <div class="wrap">
+                <h2 class="h2">풍림무약은<span class="block"></span>새롭게 나아갑니다</h2>
+                <div class="goSlideBtnA">
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+                <div class="swiper slideA">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide">
+                            <a href="">
+                                <h3 class="h3">새소식</h3>
+                                <p class="p">풍림무약, 사내소식지 창간호 발행</p>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="">
+                                <h3 class="h3">사회공헌</h3>
+                                <p class="p">사회공헌 앞장 선 풍림무약, FUVE365 항바이러스 장갑 기부</p>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="">
+                                <h3 class="h3">신제품 출시</h3>
+                                <p class="p">풍림이코사펜트산에틸연질캡슐 300mg</p>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="">
+                                <h3 class="h3">신제품 출시</h3>
+                                <p class="p">Computar Lens 신제품 출시 (Visible+SWIR 및 전동형 원격 제어 Lens connect 시리즈)</p>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="">
+                                <h3 class="h3">레시피 업데이트</h3>
+                                <p class="p">베이커리 온라인 시연회 10차! - 김태양 제과기능장</p>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="">
+                                <h3 class="h3">새소식</h3>
+                                <p class="p">풍림무약, 굿윌스토어 PC세트 기부물품전달식</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+        <!-- 무역 -->
+        <section id="trade" class="padding-t60 padding-b60">
+            <div class="wrap">
+                <hgroup>
+                    <h2 class="h2">무역사업</h2>
+                    <h2 class="h2">제약사업</h2>
+                </hgroup>
+                <p class="p">
+                    1974년 설립된 풍림무약주식회사는 화장품 및 의약품, 식품 원료, 화상광학기기 등의 고부가가치 제품을 공급하며 기업과 기업,<br>
+                    기업과 세상을 연결하는 가교 역할을 수행하고 있습니다. 고객사의 성공을 지원하는 든든한 파트너로 우리 모두를 위한 내일을 열어 갑니다.</p>
+                <a href="" class="more">VIEW MORE</a>
+                <ul>
+                    <li>
+                        <a href="">
+                            <h3 class="h3">기능재료사업</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <h3 class="h3">뷰티사이언스사업</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <h3 class="h3">TRADING</h3>
+                    </li>
+                    <li>
+                        <a href="">
+                            <h3 class="h3">의약원료사업</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <h3 class="h3">식품원료사업</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <h3 class="h3">농산물원료사업</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <h3 class="h3">화상광학사업</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <h3 class="h3">무역 브로슈어 다운로드</h3>
+                            <p class="h3">RICH WORLD <br>WITH RICHWOOD</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- 제약 -->
+        <section id="pharmaceuticals" class="padding-t60 padding-b60">
+            <div class="wrap">
+                <hgroup>
+                    <h2 class="h2">무역사업</h2>
+                    <h2 class="h2">제약사업</h2>
+                </hgroup>
+                <p class="p">
+                    건강한 사회를 만드는 풍성한 숲과 같은 기업 풍림무약은 우리 사회와 구성원들이 더욱 건강해질 수 있도록 우수한 의약품과 건강기능식품을<br>
+                    개발, 공급하고 있습니다. 존재만으로 개인과 사회에 치유와 안정을 선사하는 울창한 숲처럼 풍림무약은 헬스케어 산업의 허브이자 흔들리지<br>
+                    않는 버팀목이 되겠습니다. 
+                </p>
+                <a href="" class="more">VIEW MORE</a>
+                <ul>
+                    <li>
+                        <a href="">
+                            <h3 class="h3">CDMO사업</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <h3 class="h3">천연물사업</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <h3 class="h3">알약</h3>
+                    </li>
+                    <li>
+                        <a href="">
+                            <h3 class="h3">완제의약품사업</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <h3 class="h3">기능성 식품 사업</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <h3 class="h3">R&D</h3>
+                    </li>
+                    <li>
+                        <a href="">
+                            <h3 class="h3">연구개발</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <h3 class="h3">제약 브로슈어 다운로드</h3>
+                            <p class="h3">RICH WORLD <br>WITH RICHWOOD</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- 검색 -->
+        <section id="search" class="padding-t60 padding-b60">
+            <div class="wrap">
+                <h2 class="h2">풍림무약의<span class="block"></span>어떤 제품을 찾으시나요?</h2>
+                <div class="inputA">
+                    <div class="search">
+                        <select name="" id="">
+                            <option value="">전체</option>
+                            <option value="">무역제품</option>
+                            <option value="">제약제품</option>
+                            <option value="">기타</option>
+                        </select>
+                    </div>
+                    <input type="text" placeholder="검색어를 입력하세요">
+                    <a href="">검색</a>
+                </div>
+                <ul>
+                    <h3 class="h3">추천검색어</h3>
+                    <li><a href="">#SNOWTEX</a></li>
+                    <li><a href="">#PHARMACOAT</a></li>
+                    <li><a href="">#NIKKOL</a></li>
+                    <li><a href="">#디오맥스정</a></li>
+                    <li><a href="">#징코필정</a></li>
+                    <li><a href="">#애엽</a></li>
+                    <li><a href="">#CYCLODEXTRIN</a></li>
+                    <li><a href="">#COMPUTAR</a></li>
+                </ul>
+            </div>
+        </section>
+        <!-- 뉴스 -->
+        <section id="news" class="padding-t60 padding-b60">
+            <div class="wrap">
+                <div class="news">
+                    <h2 class="h2">NEWS</h2>
+                    <a href="" class="more">MORE</a>
+                    <ul>
+                        <li>
+                            <a href="">
+                                <h3 class="h3">[풍림무약] 48주년 창립기념일 안내</h3>
+                                <p class="p">✔️ 창립기념일 : 2022년 3월 21일(월)
+                                    오는 3월 24일은 풍림무약의 48번째 창립기념일 입니다.
+                                    항상 변함없이 풍림무약과 함께 해주신 모든 고객분들께 감사의 말씀을 전합니다.
+                                    창립기념일 휴무로 인해 업무에 혼선이 없도록 미리 확인 부탁드립니다.
+                                    감사합니다.
+                                    풍림무약 드림.
+                                </p>
+                                <p class="date">2022.03.07</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <h3 class="h3">[풍림무약] 가나안근로복지관에 설맞이 떡국떡 세트 기부 전달</h3>
+                                <p class="p">풍림무약은 성남시 소재 가나안근로복지관에 설 명절을 맞아 떡국떡 세트(200만원 상당)를 기부했습니다!전달식은 풍림무약 본사에서 진행되었습니다.
+                                    ✔️일시 : 1월 18일(화) 오후 3시 ✔️장소 : 풍림무약 본사 대회의실 ​이번 전달식에는 풍림무약 제약사업본부장 이찬규 상무와 가나안근로복지관의 이혜정 관장이 함께해 주셨습니다. 
+                                    풍림무약은 2018년부터 꾸준하게 가나안근로복지관에 건강식품 ‘썬민 아미노썬 3650’ 등을 후원하는 등 장애인 직업재활 및 일자리 확대를 위한 중증장애인생산품 소비 활성화에도 앞장서고 […]
+                                </p>
+                                <p class="date">2022.01.18</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="sns">
+                    <h2 class="h2">SNS</h2>
+                    <a href="">
+                        <p class="p">화상광학사업부 SF+AW 2022 전시회 참가!</p>
+                    </a>
+                    <ul>
+                        <li><a href="">페이스북</a></li>
+                        <li><a href="">인스타그램</a></li>
+                        <li><a href="">네이버</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- 하단 영역 -->
+    <footer>
+        <div class="wrap">
+           <div class="left">
+               <h2 class="h2">기업과 세상을 연결하는<span class="block"></span>풍림무약입니다</h2>
+           </div>
+           <div class="right">
+               <ul class="top">
+                   <li><a href="aboutus.php">회사소개</a></li>
+                   <li><a href="tradeIntro.php">무역사업</a></li>
+                   <li><a href="pharmaceuticalsIntro.php">제약사업</a></li>
+                   <li><a href="">뉴스룸</a></li>
+                   <li><a href="">채용</a></li>
+                   <li><a href="">문의</a></li>
+               </ul>
+               <div class="bottom">
+                   <h3 class="h3">RICHWOOD</h3>
+                   <address>
+                    <span>대표 이정석</span> <span>사업자등록번호 104-81-02314</span> <span>TEL 02-778-2351</span>
+                    <span>FAX 02-756-5402</span> <span>04527 서울시 중구 소월로 10 남대문로5가 단암빌딩 16층</span>
+                    </address>
+                   <a href="">개인정보처리방침</a>
+                   <a href="">이메일 무단수집거부</a>
+                   <p class="copy">COPYRIGHT 2021. RICHWOOD TRADING COMPANY, LTD. ALL RIGHTS RESERVED.</p>
+               </div>
+           </div>
+        </div>
+    </footer>
+    <script>
+        // 클릭시 주소 내려옴
+        $("footer .right .bottom address").hide();
+        $("footer .right .bottom h3").click(function(){
+            $(this).toggleClass("rot180");                
+            $("footer .right .bottom address").slideToggle();
+        });
+    </script>
+</body>
+</html>

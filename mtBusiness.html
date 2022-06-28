@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDMO 사업 소개</title>
+    <!-- 파비콘 -->
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="css/reset.css" type="text/css">
+    <!-- 구글폰트 noto sans korean -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">  
+    <!-- css -->
+    <link rel="stylesheet" href="css/common.css" type="text/css">
+    <link rel="stylesheet" href="css/header.css" type="text/css">
+    <link rel="stylesheet" href="css/mtBusiness-title.css" type="text/css">
+    <link rel="stylesheet" href="css/mtBusiness-main.css" type="text/css">
+    <link rel="stylesheet" href="css/footer.css" type="text/css">
+    <link rel="stylesheet" href="css/responsive.css" type="text/css">
+    <link rel="stylesheet" href="css/mtBusiness-responsive.css" type="text/css">
+    <!-- 폰트어썸 -->
+    <script src="https://kit.fontawesome.com/003457cfc7.js" crossorigin="anonymous"></script>
+    <!-- JS cdn -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- 부트스트랩 css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- 부트스트랩 js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- aos 스크롤 이벤트 -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>    
+    <script>
+        $(function(){
+            AOS.init();
+            $("body").attr("data-aos-duration","1500");
+        });
+    </script>
+</head>
+<body>
+    <!-- 상단 영역 -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="wrap container-fluid">
+                <h1 class="h1 navbar-brand">
+                    <a href="index.html">풍림무약주식회사</a>
+                </h1>
+                <a href="" class="allmenu">전체메뉴<span></span></a>
+                <div class="right collapse navbar-collapse" id="navbarNav">
+                    <ul class="gnb navbar-nav">
+                        <li class="nav-item">
+                            <h2 class="h4"><a href="aboutus.html">회사소개</a></h2>
+                            <ul class="sub">
+                                <li><a href="aboutus.html">회사소개</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <h2 class="h4"><a href="tradeIntro.html">무역사업</a></h2>
+                            <ul class="sub">
+                                <li><a href="tradeIntro.html">소개</a></li>
+                                <li><a href="mtBusiness.html">기능 재료 사업</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <h2 class="h4"><a href="pharmaceuticalsIntro.html">제약사업</a></h2>
+                            <ul class="sub">
+                                <li><a href="pharmaceuticalsIntro.html">소개</a></li>
+                                <li><a href="CDMO.html">CDMO사업</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <h2 class="h4"><a href="">뉴스룸</a></h2>
+                        </li>
+                        <li class="nav-item">
+                            <h2 class="h4"><a href="">채용</a></h2>
+                        </li>
+                        <li class="nav-item">
+                            <h2 class="h4"><a href="">문의</a></h2>
+                        </li>
+                    </ul>
+                    <ul class="enb navbar-nav">
+                        <li class="nav-item"><a href="" class="search">검색</a></li>
+                        <li class="nav-item"><a href="" class="lang">언어</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <script>
+        // 반응형
+        if( window.innerWidth < 769 ){
+            $("header .allmenu").css("display","flex");
+            // 서브메뉴 표시(햄버거 버튼)
+            $("header .allmenu").click(function(){
+                // 햄버거 버튼 모양 변경
+                $(this).toggleClass("x");
+                $("header .navbar").toggleClass("show");
+                // 대메뉴 나오게
+                $("header .right").toggleClass("show");
+                return false;
+            });
+            // 모바일에서 대메뉴 클릭시 바로 이동 아니고 소메뉴 나옴
+            $("header .gnb li .h4 a").attr("href","#");
+            $("header .gnb li").click(function(){  
+                $(this).children("header .gnb li .sub").slideToggle();
+                $("header .gnb li").not(this).children("header .gnb li .sub").slideUp();
+            });
+
+            // 스크롤 이벤트
+            $(window).scroll(function(){
+                windowTop = $(window).scrollTop();
+                if(windowTop > 50){
+                    $("header").addClass("move");
+                    // 스크롤 내리면 대메뉴 사라짐
+                    $("header .allmenu").removeClass("x");
+                    $("header .navbar").removeClass("show");
+                    $("header .right").removeClass("show");
+                }
+                if(windowTop < 50){
+                    $("header").removeClass("move");
+                }
+                if(windowTop > 500){
+                    $("header").addClass("moveUp");
+                    $("header .right").addClass("hide");
+                }
+                if(windowTop < 500){
+                    $("header").removeClass("moveUp");
+                    $("header .right").removeClass("hide");
+                }
+            });
+        }
+        
+    </script>
+    <!-- 타이틀 영역 -->
+    <div id="title">
+        <div class="wrap">
+            <h2 class="h2">기능 재료 사업</h2>
+        </div>
+    </div>
+    <!-- 내용 영역 -->
+    <main>
+        <!-- 기능재료사업부 -->
+        <section id="function">
+            <div class="wrap">
+                <span class="txtA">기능재료사업부는 국내외 기능성 <br>
+                    원부자재를 발굴·개발하여 고객사 니즈에 <br>
+                    맞춘 서비스를 제공합니다.</span>
+                <spsn class="imgA">
+                    <img src="img/am-aboutv3.jpg" alt="기능재료사업부">
+                </spsn>
+            </div>
+        </section>
+        <!-- 사업 영역 -->
+        <section id="business">
+            <div class="wrap">
+                <span class="h2Wrap"><h2 class="h2" data-aos="fade-up">사업 영역</h2></span>
+                <p class="p" data-aos="fade-up">기능재료사업부는 국내외 다양한 기능성 원부자재를 발굴·개발하여 산업 전반에 걸쳐 폭넓게 분포된 고객사의 니즈에 맞춘 최적의 서비스를 제공합니다. 특히 국내 유망 중소·벤처기업을 발굴하고 해외 시장 확보와 판로 개척을 통해 지원하며 함께 성장해 나가고 있습니다.</p>
+            </div>
+        </section>
+        <!-- 주요 품목 -->
+        <section id="mainItems">
+            <div class="wrap">
+                <span class="h2Wrap"><h2 class="h2" data-aos="fade-up">주요 품목</h2></span>
+                <ul class="list">
+                    <li data-aos="fade-up" data-aos-delay="300">
+                        <img src="img/am-items-01.svg" alt="철강">
+                        <h3 class="h3">철강</h3>
+                    </li>
+                    <li data-aos="fade-up" data-aos-delay="400">
+                        <img src="img/am-items-02.svg" alt="석유화학">
+                        <h3 class="h3">석유화학</h3>
+                    </li>
+                    <li data-aos="fade-up" data-aos-delay="500">
+                        <img src="img/am-items-03.svg" alt="반도체">
+                        <h3 class="h3">반도체</h3>
+                    </li>
+                    <li data-aos="fade-up" data-aos-delay="600">
+                        <img src="img/am-items-04.svg" alt="촉매">
+                        <h3 class="h3">촉매</h3>
+                    </li>
+                    <li data-aos="fade-up" data-aos-delay="700">
+                        <img src="img/am-items-05.svg" alt="전자재료">
+                        <h3 class="h3">전자재료</h3>
+                    </li>
+                    <li data-aos="fade-up" data-aos-delay="800">
+                        <img src="img/am-items-06.svg" alt="도료">
+                        <h3 class="h3">도료</h3>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- 제휴사 -->
+        <section id="affiliate">
+            <div class="wrap">
+                <span class="h2Wrap"><h2 class="h2" data-aos="fade-up">제휴사</h2></span>
+                <ul class="afList" data-aos="fade-up">
+                    <li>
+                        <h3 class="h3">NISSAN CHEMICAL CORPORATION</h3>
+                        <div class="slideA">
+                            <a href=""><img src="img/logo_nissan-1.jpg" alt="nissan"></a>
+                            <p class="p">NISSAN CHEMICAL CORPORATION은 Colloidal silica인 ‘Snowtex’를 생산하여 세계 시장에 공급합니다. Colloidal silica는 종이, 섬유, 플라스틱 보호코팅, 철강, 촉매 등 다양한 산업군에서 활용되는 원료로, 최근에는 반도체 웨이퍼의 Polishing agent로도 사용되고 있습니다. 이외에도 Colloidal alumina, Organo silicasol, Suncolloid 등의 원료를 화학과 도료 분야의 다수 기업에 공급하고 있습니다. </p>
+                        </div>
+                    </li>
+                    <li>
+                        <h3 class="h3">NEW JAPAN CHEMICAL CO., LTD.</h3>
+                        <div class="slideA">
+                            <a href=""><img src="img/NEW-JAPAN-CHEMICAL-1.jpg" alt="CHEMICAL"></a>
+                            <p class="p">NEW JAPAN CHEMICAL CO., LTD.는 산무수물 및 칼본산, 폴리올레핀 핵제 및 겔화제(Gel all series) 등을 생산하는 전문기업입니다. 산무수물 및 칼본산은 에폭시 경화제, 방청제, 폴리에스테르 개질제, 접착제, 도료 등에 사용되며, LED와 FBT 등의 전기·전자 재료 분야에도 적용됩니다. 폴리올레핀 핵제 및 겔화제는 세계 최초의 Sorbitol계 투명수지 개질제로서, 국내 유화업계에서 Homo PP와 Random PP의 사출·압출 Grade에 폭넓게 사용되고 있습니다. 현재 고투명도와 무취의 특성을 확보한 새로운 핵제의 개발을 완료해 향후 더욱 뛰어난 품질의 투명수지 개질제 공급이 가능할 것으로 예상됩니다. </p>
+                        </div>
+                    </li>
+                    <li>
+                        <h3 class="h3">NGK INSULATORS, LTD.</h3>
+                        <div class="slideA">
+                            <a href=""><img src="img/NGK-INSULATORS-1.jpg" alt="INSULATORS"></a>
+                            <p class="p">NGK INSULATORS, LTD.는 내식성과 내열성이 우수한 화학공업용 세라믹·테프론 펌프 및 밸브, 라이닝 기기, 내산 Brick·Mortar 등의 제품을 개발·생산하고 있습니다. </p>
+                        </div>
+                    </li>
+                    <li>
+                        <h3 class="h3">C&C MATERIALS</h3>
+                        <div class="slideA">
+                            <a href=""><img src="img/CC-MATERIALS.jpg" alt="MATERIALS"></a>
+                            <p class="p">국내 유망 중소기업인 C&C Materials는 Core-shell 기술 및 다원소코팅 기술을 응용하여, Cu·Ag·Ni, Polymer·Ag·Ni, 세라믹·금속 등의 다양한 전도성 입자 및 고객 맞춤형 Customize 입자를 생산, 국내외 기업에 공급하고 있습니다. </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <script>
+            var afLi = $("#affiliate .afList li");
+            var afh3 = $("#affiliate .afList li .h3");
+            var afslideA = $("main #affiliate .afList li .slideA");
+            afslideA.hide();
+            afslideA.first().slideDown().addClass("borderB");
+            afh3.first().addClass("borderB");
+            // 제휴사 리스트 제목 클릭시
+            $(afh3).on("click",function(){
+                // 화살표 돌아감, 밑 줄 검은색
+                $(afh3).not(this).removeClass("rot180 borderB");
+                $(this).toggleClass("rot180 borderB");
+                // 슬라이드 내려옴
+                $(afh3).not(this).siblings().slideUp();
+                $(this).siblings(afslideA).slideToggle();
+            });
+        </script>
+        <!-- 제휴사 위치 -->
+        <section id="afLo">
+            <div class="wrap">
+                <span class="h2Wrap"><h2 class="h2" data-aos="fade-up">제휴사 위치</h2></span>
+            </div>
+            <div class="map" data-aos="fade-up">
+                <div class="imgA">
+                    <img src="img/map-korea-japan.svg" alt="제휴사 위치">                    
+                </div>
+                <div class="dotA">
+                    <p class="p">C&C MATERIALS</p>
+                    <div class="dotWrap"><span class="dot"></span></div>
+                </div>
+                <div class="dotA">
+                    <p class="p">NEW JAPAN CHEMICAL CO., LTD.</p>
+                    <div class="dotWrap"><span class="dot"></span></div>
+                </div>
+                <div class="dotA">
+                    <p class="p">NISSAN CHEMICAL CORPORATION</p>
+                    <p class="p">NGK INSULATORS, LTD.</p>
+                    <div class="dotWrap"><span class="dot"></span></div>
+                </div>
+            </div>
+        </section>
+            <!-- 안내문의 -->
+            <section id="inquiry">
+                <div class="wrap">
+                    <div class="mtinquiry">
+                        <a href="">
+                            <h2 class="h2">기능재료사업 안내 및 문의</h2>
+                            <p class="phone">전화 상담 <span>02-6905-3153,3154</span></p>
+                            <p class="email">이메일 문의 <span>dhyoon@richwood.net,</span><span>rim524@richwood.net</span></p>
+                        </a>
+                    </div>                    
+                </div>
+            </section>
+    </main>
+    <script>
+        // 제휴사 위치 시간 따라 바뀜
+        var n = -1;
+        setInterval(afLoshow, 3000);
+        function afLoshow(){
+            if( n == 2){
+                n = -1
+            }
+            n++
+            $("#afLo .map .dotA:eq("+n+")").siblings().removeClass("show");
+            $("#afLo .map .dotA:eq("+n+")").addClass("show");
+        }
+    </script>
+    <!-- 하단 영역 -->
+    <footer>
+        <div class="wrap">
+           <div class="left">
+               <h2 class="h2">기업과 세상을 연결하는<span class="block"></span>풍림무약입니다</h2>
+           </div>
+           <div class="right">
+               <ul class="top">
+                   <li><a href="aboutus.php">회사소개</a></li>
+                   <li><a href="tradeIntro.php">무역사업</a></li>
+                   <li><a href="pharmaceuticalsIntro.php">제약사업</a></li>
+                   <li><a href="">뉴스룸</a></li>
+                   <li><a href="">채용</a></li>
+                   <li><a href="">문의</a></li>
+               </ul>
+               <div class="bottom">
+                   <h3 class="h3">RICHWOOD</h3>
+                   <address>
+                    대표 이정석 <span>사업자등록번호 104-81-02314</span> TEL 02-778-2351 <br>
+                    <span>FAX 02-756-5402 04527</span> 서울시 중구 소월로 10 남대문로5가 단암빌딩 16층
+                    </address>
+                   <a href="">개인정보처리방침</a>
+                   <a href="">이메일 무단수집거부</a>
+                   <p class="copy">COPYRIGHT 2021. RICHWOOD TRADING COMPANY, LTD. ALL RIGHTS RESERVED.</p>
+               </div>
+           </div>
+        </div>
+    </footer>
+    <script>
+        // 클릭시 주소 내려옴
+        $("footer .right .bottom address").hide();
+        $("footer .right .bottom h3").click(function(){
+            $(this).toggleClass("rot180");                
+            $("footer .right .bottom address").slideToggle();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+body .swiper-button-next, 
+body .swiper-button-prev{
+  
+}
+
+body .swiper-button-next{  
+  right: -5px;
+  color: initial;
+  opacity: 0.5;
+}
+
+body .swiper-button-prev{  
+  left: 0px;
+  color: initial;
+  opacity: 0.5;
+}
+
+body .swiper-button-next::after, 
+body .swiper-button-prev::after{
+  font-size: 30px;
+}
+body .swiper-button-next.swiper-button-disabled, 
+body .swiper-button-prev.swiper-button-disabled {
+  opacity: .35;
+  cursor: auto;
+  pointer-events: none;
+}
+/* body .swiper-pagination{
+  top: 99%;
+  height: 2px;
+  width: 95%;
+  left: 40px;
+} */
+body .swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
+  background-color: #000;
+  opacity: 0.5;
+  height: 2px;
+}
+
+.slideBtnA{
+  top: 50%;
+  left: 0%;
+  width: 100%;
+}

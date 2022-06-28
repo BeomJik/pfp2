@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회사소개</title>
+    <!-- 파비콘 -->
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="css/reset.css" type="text/css">
+    <!-- 구글폰트 noto sans korean -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">  
+    <!-- css -->
+    <link rel="stylesheet" href="css/common.css" type="text/css">
+    <link rel="stylesheet" href="css/header.css" type="text/css">
+    <link rel="stylesheet" href="css/aboutus-title.css" type="text/css">
+    <link rel="stylesheet" href="css/aboutus-main.css" type="text/css">
+    <link rel="stylesheet" href="css/footer.css" type="text/css">
+    <link rel="stylesheet" href="css/responsive.css" type="text/css">
+    <link rel="stylesheet" href="css/aboutus-responsive.css" type="text/css">
+    <!-- 폰트어썸 -->
+    <script src="https://kit.fontawesome.com/003457cfc7.js" crossorigin="anonymous"></script>
+    <!-- JS cdn -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- 부트스트랩 css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- 부트스트랩 js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+
+            // title 글씨 슬라이드
+            $("#title h2.h2").addClass("up");
+            $("#title p.h3").addClass("up");
+
+            // 대메뉴 크런트
+            $("header ul.gnb li h2.h4:eq(0)").addClass("current");
+
+             // 변수
+            windowH = $(window).height();
+            mainTop = $("main").offset().top;
+            titleH = $("#title").innerHeight();
+            mainsectionTop = $("main section:eq(1)").offset().top;
+            foundingH = $("main #founding").innerHeight();
+            medicineH = $("main #medicine").innerHeight();
+            laboratoryH = $("main #laboratory").innerHeight();
+            informationH = $("main #information").height();
+            informationTop = $("main #information").offset().top;
+            overviewH = $("main #overview").height();
+            overviewTop = $("main #overview").offset().top;
+            greetingsH = $("main #greetings").height();
+            greetingsTop = $("main #greetings").offset().top;
+            // 스크롤 이벤트
+            $(window).scroll(function(){
+                
+                windowTop = $(window).scrollTop();
+                // 스크롤 내리면  대메뉴 색 변경
+                if(windowTop >= titleH / 5 ){
+                    $("header").addClass("white");
+                    $("header a").addClass("white");                    
+                }
+                if(windowTop <= titleH / 5 ){
+                    $("header").removeClass("white");
+                    $("header a").removeClass("white");
+                }
+                // 스크롤 내리면 대메뉴 올라감
+                if(windowTop >= mainsectionTop / 3 ){
+                    $("header").addClass("slideHeader");
+                }
+                if(windowTop <= mainsectionTop / 3){
+                    $("header").removeClass("slideHeader");
+                }
+                         
+                // 1974 진입시 글씨 up, 이미지 small
+                 if(windowTop >= foundingH / 3 ){
+                    $("main #founding .left").addClass("up");
+                    $("main #founding img").addClass("small");
+                }
+                if(windowTop <= foundingH / 3 ){
+                    $("main #founding .left").removeClass("up");
+                    $("main #founding img").removeClass("small");   
+                }
+
+                // 1991 진입시 글씨 up, 이미지 small
+                if(windowTop >= foundingH + medicineH / 3 ){
+                    $("main #medicine .left").addClass("up");
+                    $("main #medicine img").addClass("small");
+                }
+                if(windowTop <= foundingH + medicineH / 3 ){
+                    $("main #medicine .left").removeClass("up");
+                    $("main #medicine img").removeClass("small");   
+                }
+
+                // 2006 진입시 글씨 up, 이미지 small
+                if(windowTop >= foundingH + medicineH + laboratoryH / 3 ){
+                    $("main #laboratory .left").addClass("up");
+                    $("main #laboratory img").addClass("small");
+                }
+                if(windowTop <= foundingH + medicineH + laboratoryH / 3 ){
+                    $("main #laboratory .left").removeClass("up");
+                    $("main #laboratory img").removeClass("small");   
+                }
+
+                if(windowTop >= titleH + foundingH / 4 ){
+                    // 1974 투명해짐
+                    $("main #founding").addClass("clear"); 
+                }
+                if(windowTop <= titleH + foundingH / 4 ){  
+                    // 투명 해제
+                    $("main #founding").removeClass("clear");
+                }
+
+                if(windowTop >= titleH + foundingH + medicineH / 4 ){
+                    // 1991 투명해짐
+                    $("main #medicine").addClass("clear"); 
+                }
+                if(windowTop <= titleH + foundingH + medicineH / 4 ){  
+                    // 투명 해제
+                    $("main #medicine").removeClass("clear");
+                }
+
+                if(windowTop >= titleH + foundingH + medicineH + laboratoryH/ 4 ){
+                    // 2006 투명해짐
+                    $("main #laboratory").addClass("clear"); 
+                }
+                if(windowTop <= titleH + foundingH + medicineH + laboratoryH/ 4 ){  
+                    // 투명 해제
+                    $("main #laboratory").removeClass("clear");
+                }
+
+                // 회사정보
+                if(windowTop >= informationTop - informationH ){
+                    // 회사정보 진입시 배경, 글씨 색 변경
+                    $("body").addClass("white");
+                }
+                if(windowTop <= informationTop - informationH ){
+                    // 회사정보 이탈시 배경, 글씨 색 변경 해제
+                    $("body").removeClass("white");
+
+                }
+
+                // 사업개요
+                if(windowTop >= overviewTop - overviewH ){
+                    // 사업개요 진입시 배경, 글씨 색 변경
+                    $("body").addClass("white");
+                }
+                if(windowTop <= overviewTop - overviewH ){
+                    // 사업개요 이탈시 배경, 글씨 색 변경 해제
+                    $("body").removeClass("white");
+                }
+
+
+                // 대표 인사말
+                if(windowTop >= greetingsTop - greetingsH ){
+                    // 대표 인사말 진입시 배경, 글씨 색 변경
+                    $("body").addClass("white");
+                }
+                if(windowTop <= greetingsTop - greetingsH ){
+                    // 대표 인사말 이탈시 배경, 글씨 색 변경 해제
+                    $("body").removeClass("white");
+                }
+            });
+
+        });
+    </script>
+    <!-- aos 스크롤 이벤트 -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>    
+    <script>
+        $(function(){
+            AOS.init();
+        });
+    </script>
+</head>
+<body>
+    <!-- 상단 영역 -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="wrap container-fluid">
+                <h1 class="h1 navbar-brand">
+                    <a href="index.html">풍림무약주식회사</a>
+                </h1>
+                <a href="" class="allmenu">전체메뉴<span></span></a>
+                <div class="right collapse navbar-collapse" id="navbarNav">
+                    <ul class="gnb navbar-nav">
+                        <li class="nav-item">
+                            <h2 class="h4"><a href="aboutus.html">회사소개</a></h2>
+                            <ul class="sub">
+                                <li><a href="aboutus.html">회사소개</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <h2 class="h4"><a href="tradeIntro.html">무역사업</a></h2>
+                            <ul class="sub">
+                                <li><a href="tradeIntro.html">소개</a></li>
+                                <li><a href="mtBusiness.html">기능 재료 사업</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <h2 class="h4"><a href="pharmaceuticalsIntro.html">제약사업</a></h2>
+                            <ul class="sub">
+                                <li><a href="pharmaceuticalsIntro.html">소개</a></li>
+                                <li><a href="CDMO.html">CDMO사업</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <h2 class="h4"><a href="">뉴스룸</a></h2>
+                        </li>
+                        <li class="nav-item">
+                            <h2 class="h4"><a href="">채용</a></h2>
+                        </li>
+                        <li class="nav-item">
+                            <h2 class="h4"><a href="">문의</a></h2>
+                        </li>
+                    </ul>
+                    <ul class="enb navbar-nav">
+                        <li class="nav-item"><a href="" class="search">검색</a></li>
+                        <li class="nav-item"><a href="" class="lang">언어</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <script>
+        // 반응형
+        if( window.innerWidth < 769 ){
+            $("header .allmenu").css("display","flex");
+            // 서브메뉴 표시(햄버거 버튼)
+            $("header .allmenu").click(function(){
+                // 햄버거 버튼 모양 변경
+                $(this).toggleClass("x");
+                $("header .navbar").toggleClass("show");
+                // 대메뉴 나오게
+                $("header .right").toggleClass("show");
+                return false;
+            });
+            // 모바일에서 대메뉴 클릭시 바로 이동 아니고 소메뉴 나옴
+            $("header .gnb li .h4 a").attr("href","#");
+            $("header .gnb li").click(function(){  
+                $(this).children("header .gnb li .sub").slideToggle();
+                $("header .gnb li").not(this).children("header .gnb li .sub").slideUp();
+            });
+
+            // 스크롤 이벤트
+            $(window).scroll(function(){
+                windowTop = $(window).scrollTop();
+                if(windowTop > 50){
+                    $("header").addClass("move");
+                    // 스크롤 내리면 대메뉴 사라짐
+                    $("header .allmenu").removeClass("x");
+                    $("header .navbar").removeClass("show");
+                    $("header .right").removeClass("show");
+                }
+                if(windowTop < 50){
+                    $("header").removeClass("move");
+                }
+                if(windowTop > 500){
+                    $("header").addClass("moveUp");
+                    $("header .right").addClass("hide");
+                }
+                if(windowTop < 500){
+                    $("header").removeClass("moveUp");
+                    $("header .right").removeClass("hide");
+                }
+            });
+        }
+        
+    </script>
+    <!-- 타이틀 영역 -->
+    <div id="title">
+        <div class="wrap">
+            <span><h2 class="h2" data-aos="fade-up">RICHWOOD</h2></span>
+            <p class="h3" data-aos="fade-up" data-aos-delay="500">자연 속 맑은 공기를 만드는 울창한 숲처럼 <br>
+                밝고 건강한 사회를 만들어 나가는 풍림무약입니다
+            </p>
+        </div>
+    </div>
+    <!-- 내용 영역 -->
+    <main>
+        <!-- 1974 -->
+        <section id="founding" >
+            <div class="wrap">
+                <div class="left" data-aos="fade-up">
+                    <h2 class="h4">1974년</h2>
+                    <p class="h3">창립 후 40여년 이상 <br>
+                        무역업을 기반으로 제약 및 식품 <br>
+                        원료 등의 고부가가치 원료를 <br>
+                        국내시장에 공급하고 있습니다.
+                    </p>
+                </div>
+                <span class="imgWrap" >
+                <img src="img/biz-introduce-1974.jpg" alt=""data-aos="zoom-in" data-aos-duration="3000">
+                </span>
+            </div>
+        </section>
+        <!-- 1991 -->
+        <section id="medicine" >
+            <div class="wrap">
+                <div class="left" data-aos="fade-up">
+                    <h2 class="h4">1991년</h2>
+                    <p class="h3">의약품 제조공장 준공이래 <br>
+                        제약사업의 전문성을 키우며 <br>
+                        우수한 의약품을 제조하고 있으며
+                    </p>
+                </div>
+                <span class="imgWrap" >
+                <img src="img/biz-introduce-1991.jpg" alt=""data-aos="zoom-in" data-aos-duration="3000">
+                </span>
+            </div>
+        </section>
+        <!-- 2006 -->
+        <section id="laboratory">
+            <div class="wrap">
+                <div class="left" data-aos="fade-up">
+                    <h2 class="h4">2006년</h2>
+                    <p class="h3">중앙연구소 설립 이후에는 <br>
+                        개량신약, 천연의약, 복합신약 등 <br>
+                        고부가가치를 창출할 수 있는 의약품 <br>
+                        연구개발에 매진하고 있습니다.
+                    </p>
+                </div>
+                <span class="imgWrap" >
+                <img src="img/biz-introduce-2006.jpg" alt=""data-aos="zoom-in" data-aos-duration="3000">
+                </span>
+            </div>
+        </section>
+        <!-- 회사정보 -->
+        <section id="information">
+            <div class="wrap">
+                <span class="h2Wrap"><h2 class="h2" data-aos="fade-up">회사정보</h2></span>
+                <ul class="list">
+                    <li data-aos="fade-up" data-aos-delay="300">
+                        <i class="fa-regular fa-building"></i>
+                        <h3 class="h3">기업명</h3>
+                        <p class="p">풍림무약주식회사</p>
+                    </li>
+                    <li data-aos="fade-up" data-aos-delay="400">
+                        <i class="fa-solid fa-people-group"></i>
+                        <h3 class="h3">대표이사</h3>
+                        <p class="p">이정석</p>
+                    </li>
+                    <li data-aos="fade-up" data-aos-delay="500">
+                        <i class="fa-solid fa-tree"></i>
+                        <h3 class="h3">설립일</h3>
+                        <p class="p">1974. 03. 21</p>
+                    </li>
+                    <li data-aos="fade-up" data-aos-delay="600">
+                        <i class="fa-regular fa-map"></i>
+                        <h3 class="h3">본사주소</h3>
+                        <p class="p">서울 중구 소월로 10 <br> 단암빌딩</p>
+                    </li>
+                    <li data-aos="fade-up" data-aos-delay="700">
+                        <i class="fa-solid fa-earth-asia"></i>
+                        <h3 class="h3">대표업종·무역</h3>
+                        <p class="p">수출 및 수입</p>
+                    </li>
+                    <li data-aos="fade-up" data-aos-delay="800">
+                        <i class="fa-solid fa-prescription-bottle-medical"></i>
+                        <h3 class="h3">대표업종·제약</h3>
+                        <p class="p">의약품제조 및 OEM, ODM</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- 사업개요 -->
+        <section id="overview">
+            <div class="wrap">
+                <span class="h2Wrap"><h2 class="h2" data-aos="fade-up">사업개요</h2></span>
+                <div class="right">
+                    <div class="trade" data-aos="fade-up" data-aos-duration="3000" data-aos="fade-up" data-aos-delay="300">
+                        <h3 class="h3">무역사업</h3>
+                        <p class="p">무역사업은 1974년 창업부터 주축이된 사업분야로 화장품, 의약품, 식품원료, 광학기기 등 <br>
+                            고부가가치 제품을 국내에 유통하고 있습니다. 신규시장 동향파악, 차세대 제품 발굴, 고부가가치 제품 발굴, <br>
+                            기존제품 판매 확대, 고품질 원료 공급 등 사업 다각화를 통해 기업 가치를 극대화 하고 있습니다.
+                        </p>
+                        <ul>
+                            <li>기능재료사업</li>
+                            <li>뷰티사이언스사업</li>
+                            <li>의약원료사업</li>
+                            <li>식품원료사업</li>
+                            <li>화상광학사업</li>
+                            <li>농산물사업</li>
+                        </ul>
+                    </div>
+                    <div class="restrictions" data-aos="fade-up" data-aos-duration="3000" data-aos="fade-up" data-aos-delay="300">
+                        <h3 class="h3">제약사업</h3>
+                        <p class="p">제약사업은 20년 이상 축적된 독자적인 기술력과 노하우로 우수한 품질의 의약품을 <br>
+                            생산하고 있으며, 핵심 연구시설인 R&D센터를 중심으로 국내외 다양한 연구개발 네트워크를 구축하여 <br>
+                            천연물, 완제의약품, 신의약 및 건강기능식품 연구개발에 집중 투자하고 있습니다.
+                        </p>
+                        <ul>
+                            <li>CDMO사업</li>
+                            <li>천연물사업</li>
+                            <li>완제의약품사업</li>
+                            <li>기능성식품사업</li>
+                            <li>연구개발</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 대표 인사말 -->
+        <section id="greetings">
+            <div class="wrap">
+                <span class="h2Wrap"><h2 class="h2" data-aos="fade-up">대표 인사말</h2></span>
+                <div class="right">
+                    <p class="p" data-aos="fade-up">안녕하십니까. <br>
+                        대표이사 이정석입니다.
+                    </p>
+                    <p class="p" data-aos="fade-up">풍림무약주식회사는 1974년 설립된 이후, 신용과 신뢰를 바탕으로 제약 및 식품, <br>
+                        화장품 및 화학 등 폭넓은 산업 분야에 사용되는 고부가가치 원료를 <br>
+                        국내 시장에 공급해 왔습니다. 또한 전문성을 기반으로 우수 의약품과 <br>
+                        건강기능식품을 개발·공급하며 사람과 사회를 위한 새로운 내일을 만들어가는 <br>
+                        기업으로서 50여 년의 역사를 향해 지속적인 성장을 이어가고 있습니다.
+                    </p>
+                    <p class="p" data-aos="fade-up">풍요로운 사회의 밑거름이 되는 아름다운 기업 ‘풍림무약주식회사’가 <br>
+                        될 수 있도록, 새로운 가능성을 찾아내고 끊임없는 도전을 통해 실현해가는 <br>
+                        풍림무약에 여러분의 많은 관심과 따뜻한 성원을 부탁드립니다. <br>
+                        감사합니다.
+                    </p>
+                    <img src="img/ceo-sign.svg" alt="" data-aos="fade-up">
+                    <a href="" class="download" data-aos="fade-up">회사소개서 다운로드</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- 하단 영역 -->
+    <footer>
+        <div class="wrap">
+           <div class="left">
+               <h2 class="h2">기업과 세상을 연결하는<span class="block"></span>풍림무약입니다</h2>
+           </div>
+           <div class="right">
+               <ul class="top">
+                   <li><a href="aboutus.php">회사소개</a></li>
+                   <li><a href="tradeIntro.php">무역사업</a></li>
+                   <li><a href="pharmaceuticalsIntro.php">제약사업</a></li>
+                   <li><a href="">뉴스룸</a></li>
+                   <li><a href="">채용</a></li>
+                   <li><a href="">문의</a></li>
+               </ul>
+               <div class="bottom">
+                   <h3 class="h3">RICHWOOD</h3>
+                   <address>
+                    <span>대표 이정석</span> <span>사업자등록번호 104-81-02314</span> <span>TEL 02-778-2351</span>
+                    <span>FAX 02-756-5402</span> <span>04527 서울시 중구 소월로 10 남대문로5가 단암빌딩 16층</span>
+                    </address>
+                   <a href="">개인정보처리방침</a>
+                   <a href="">이메일 무단수집거부</a>
+                   <p class="copy">COPYRIGHT 2021. RICHWOOD TRADING COMPANY, LTD. ALL RIGHTS RESERVED.</p>
+               </div>
+           </div>
+        </div>
+    </footer>
+    <script>
+        // 클릭시 주소 내려옴
+        $("footer .right .bottom address").hide();
+        $("footer .right .bottom h3").click(function(){
+            $(this).toggleClass("rot180");                
+            $("footer .right .bottom address").slideToggle();
+        });
+    </script>
+</body>
+</html>

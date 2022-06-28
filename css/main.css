@@ -1,0 +1,597 @@
+main {
+  
+}
+main section .wrap{
+  width: calc(100% - 60px);
+}
+/* ----------------------------------------나아갑니다---------------------------------------- */
+#go {
+  
+}
+#go .wrap {
+  position: relative;
+  padding: 0 30px;
+}
+#go .goSlideBtnA{
+  position: absolute;
+  top: 40%;
+  right: 3%;
+  z-index: 1;
+}
+#go .count{
+  position: absolute;
+  top: 35%;
+  right: 3%;
+}
+#go .count span{
+  font-size: 30px;
+  font-weight: 400;
+  padding: 0 10px;
+}
+#go .count .cCount{
+  
+}
+#go .count .tCount::before{
+  content: "";
+  opacity: 0.5;
+  display: inline-block;
+  width: 2px;
+  height: 20px;
+  background:#000;
+  transform: rotate(30deg) translateX(-8px) translateY(5px);
+}
+#go .count .tCount{
+  opacity: 0.5;
+  display: inline-block;
+}
+#go .goSlideBtnA .swiper-button-prev{
+  left: -130px;
+}
+#go .goSlideBtnA .swiper-button-next{
+  right: -25px;
+}
+#go .swiper{
+  
+}
+#go .swiper .siper-wrapper{
+  
+}
+#go .swiper-pagination{
+  display: none;
+}
+#go .h2 {  
+  padding: 50px 0;
+  line-height: 1.2;
+}
+#go .control {
+  
+}
+#go .control .prev {
+  
+}
+#go .control .next {
+  
+}
+#go ul {
+  
+}
+#go ul li {  
+
+}
+#go ul li a {  
+  display: flex;
+  padding: 35px 0px 35px 80px;
+  align-items: center;
+  border-radius: 60px;
+  border: 3px solid#000;
+  transition: all 0.5s;
+  justify-content: space-between;
+}
+#go ul li a:hover{  
+  background-color:#000; 
+  color:#fff;
+}
+#go ul li a .h3 {  
+  font-size: 25px;
+}
+#go ul li a .h3::after{
+  content: "";
+  width: 1px;
+  height: 20px;
+  display: inline-block;
+  background-color:#ccc;
+  transform: translateX(30px);
+}
+#go ul li a::after{
+  content: "";
+  display: inline-block;
+  background-image: url(../img/right.svg);
+  width: 30px;
+  height: 25px;
+  background-size: 100%;
+  transform: translateX(-50px);
+}
+#go ul li a::after{
+  animation-duration: 0.5s;
+  animation-direction: reverse;
+  animation-fill-mode: initial;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+}
+@keyframes slideright{
+  0%{
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100%{
+    transform: translateX(-50px);
+    opacity: 1;
+  }
+}
+#go ul li a:hover::after{ 
+  animation-name: slideright;
+  background-image: url(../img/rightw.svg);
+}
+#go ul li a .p {  
+  font-size: 25px;
+  width: 79%;
+}
+/* ----------------------------------------무역---------------------------------------- */
+#trade,
+#pharmaceuticals{  
+  background-color:#f9f9f9;
+}
+#trade .wrap,
+#pharmaceuticals .wrap{
+  width: calc(100% - 30px);
+}
+#trade hgroup,
+#pharmaceuticals hgroup{  
+  display: flex;
+  gap: 50px;
+}
+#trade hgroup h2.h2,
+#pharmaceuticals hgroup h2.h2{
+  font-size: 55px;
+   color:#ccc; 
+  transition: all 0.3s;
+  cursor: pointer;
+}
+#trade hgroup h2.h2.red,
+#pharmaceuticals hgroup h2.h2.red{  
+  color:#d60000;
+}
+#trade hgroup h2.h2.blue,
+#pharmaceuticals hgroup h2.h2.blue{
+  color:#2d5fff 
+}
+#trade hgroup h2.h2::before,
+#pharmaceuticals hgroup h2.h2::before{
+  content: ".";
+  font-size: 50px;
+  display: block;
+  text-align: center;
+  transform: translateY(-20px);
+}
+#trade .p,
+#pharmaceuticals .p{  
+  font-size: 18px;
+  margin: 50px 0;
+  line-height: 1.8;
+  font-weight: 400;
+}
+#trade .more,
+#pharmaceuticals .more{  
+  border: 3px solid#ccc;
+  width: 180px;
+  height: 60px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+#trade .more:hover,
+#pharmaceuticals .more:hover{
+  border-radius: 40px;
+  border-color:#d60000; 
+}
+#trade .more.red:hover,
+#pharmaceuticals .more.red:hover{
+  border-color:#d60000; 
+}
+#trade .more.blue:hover,
+#pharmaceuticals .more.blue:hover{
+  border-color:#2d5fff;
+}
+#trade ul,
+#pharmaceuticals ul{  
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 60px 0;
+  width: 100%;
+  justify-content: space-between;
+}
+#trade ul li,
+#pharmaceuticals ul li{
+  width: calc((100% / 4) - 30px);
+  text-align: center;
+}
+#trade ul li a,
+#pharmaceuticals ul li a{
+  width: 100%;
+  display: block;
+  position: relative;
+  max-width: 361px;
+}
+#trade ul li a::before{
+ content: "";
+ display: block;
+ width: 100%;
+ height: 361px;
+ background-position: center;
+ background-size: 100%;
+ transition: all 0.5s;
+ background-repeat: no-repeat;
+ max-width: 361px;
+}
+#pharmaceuticals ul li a::before{
+ content: "";
+ display: block;
+ width: 361px;
+ height: 361px;
+ background-position: center;
+ background-size: 100%;
+ transition: all 0.5s;
+ border-radius: 181px;
+}
+#trade ul li a:hover::before,
+#pharmaceuticals ul li a:hover::before{
+  background-size: 105%;
+}
+#trade ul li:nth-child(8) a:hover::before,
+#pharmaceuticals ul li:nth-child(8) a:hover::before{
+   background-size: 100%;
+}
+#trade ul li:nth-child(1) a::before{
+  background-image: url(../img/trade1.jpg);
+}
+#trade ul li:nth-child(2) a::before{
+  background-image: url(../img/trade2.jpg);
+}
+#trade ul li:nth-child(4) a::before{
+  background-image: url(../img/trade4.jpg);
+}
+#trade ul li:nth-child(5) a::before{
+  background-image: url(../img/trade5.jpg);
+}
+#trade ul li:nth-child(6) a::before{
+  background-image: url(../img/trade6.jpg);
+}
+#trade ul li:nth-child(7) a::before{
+  background-image: url(../img/trade7.jpg);
+}
+#trade ul li:nth-child(8) a::before{
+  background-image: url(../img/trade8.gif);
+}
+#pharmaceuticals ul li:nth-child(1) a::before{
+  background-image: url(../img/pharmaceuticals1.jpg);
+}
+#pharmaceuticals ul li:nth-child(2) a::before{
+  background-image: url(../img/pharmaceuticals2.jpg);
+}
+#pharmaceuticals ul li:nth-child(3)::before{
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-size: 100%;
+  background-image: url(../img/pharmaceuticals3.jpg);
+  background-repeat: no-repeat;
+}
+#pharmaceuticals ul li:nth-child(4) a::before{
+  background-image: url(../img/pharmaceuticals4.jpg);
+}
+#pharmaceuticals ul li:nth-child(5) a::before{
+  background-image: url(../img/pharmaceuticals5.jpg);
+}
+#pharmaceuticals ul li:nth-child(7) a::before{
+  background-image: url(../img/pharmaceuticals7.jpg);
+}
+#pharmaceuticals ul li:nth-child(8) a::before{
+  background-image: url(../img/pharmaceuticals8.gif);
+}
+#trade ul li a h3.h3,
+#pharmaceuticals ul li a h3.h3{ 
+  padding: 30px;
+  font-size: 20px;
+  font-weight: 500;
+}
+#trade ul li a p.h3{
+  font-size: 20px;
+  position: absolute; 
+  bottom: 110px;
+  left: 35px;
+  line-height: 1.4;
+  color:#fff;
+  text-align: left;
+}
+#pharmaceuticals ul li a p.h3{
+  font-size: 20px;
+  position: absolute;
+  top: calc(50% - 65px);
+  left: calc(50% - 85px);
+  line-height: 1.4;
+  color:#fff;
+}
+#trade ul li:nth-child(3) .h3{
+  color:#d60000;
+  font-size: 50px;
+  font-weight: 600;
+  transform: translateY(calc(180px - 40px));
+}
+#pharmaceuticals ul li:nth-child(3) .h3{
+  display: none;
+}
+#pharmaceuticals ul li:nth-child(6) .h3{
+  color:#2d5fff;
+  font-size: 50px;
+  font-weight: 600;
+  transform: translateY(calc(180px - 40px));
+}
+/* ----------------------------------------검색---------------------------------------- */
+#search {  
+  padding-bottom: 120px;
+}
+#search .wrap {
+  
+}
+#search .h2 {  
+  line-height: 1.3;
+  margin: 50px 0;
+}
+#search .inputA{
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+#search div.search{ 
+  width: 230px;
+  height: 90px;
+  border-radius: 45px;
+  border: 3px solid#ddd;
+  background-color:#fff;
+  transition: all 0.3s;
+  cursor: pointer;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  display: inline-block;
+}
+#search div.search::after{
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  border: 3px solid#000;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg) translate(-3px,-3px);
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transition: all 0.3s;
+}
+#search div.search.rot180::after{
+  transform: rotate(-135deg) translate(-3px,-3px);
+}
+#search div.search:hover{  
+  border-color:#000;
+}
+#search div.search select {  
+  border: none;
+  font-size: 20px;
+  font-weight: 600;
+  background-color: transparent;
+  appearance: none;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  padding: 0 30px;
+  box-sizing: border-box;
+}
+#search div.search select option {  
+  color:#000;
+  background-color:#fff;
+}
+#search div.search select option:hover{
+  color:#000;
+}
+#search input {  
+  margin-left: 20px;
+  width: 1073px;
+  height: 90px;
+  background-color:#f4f4f4;
+  border: none;
+  border-radius: 45px 0 0 45px;
+  font-size: 21px;
+  box-sizing: border-box;
+  padding: 0 50px;
+  font-weight: 600;
+  color:#999;
+}
+#search input + a {  
+  display: inline-block;
+  width: 200px;
+  height: 90px;
+  background-color:#000;
+  color:#fff;
+  border-radius: 0 45px 45px 0;
+  text-align: center;
+  font-size: 26px;
+  font-weight: 600;
+  margin-left: 5px;
+  padding: 29px 0;
+  box-sizing: border-box;
+}
+#search ul {  
+  display: flex;
+  justify-content: space-around;
+  width: 70%;
+  margin-left: 20%;
+  margin-top: 30px;
+}
+#search ul .h3 {  
+  font-size: 20px;
+  font-weight: 500;
+}
+#search ul li {
+  
+}
+#search ul li a {  
+  color:#999999;
+  font-size: 18px;
+  transition: 0.5s;
+}
+#search ul li a:hover{
+  color:#000;
+}
+/* ----------------------------------------뉴스---------------------------------------- */
+#news {
+  background-color:#f9f9f9;
+}
+#news .wrap {  
+  display: flex;
+  justify-content: space-between;
+}
+#news .news {  
+  display: flex;
+  flex-wrap: wrap;
+  width: 60%;
+  justify-content: space-between;
+  padding: 0 100px 0 0;
+}
+#news .news .h2 {
+  
+}
+#news .news .more { 
+  display: block;
+  color:#bbb;
+  font-weight: 500;
+  height: fit-content;
+  padding: 30px 30px 0 0;
+  box-sizing: border-box;
+}
+#news .news .more::after{
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border: 2px solid#bbb;
+  border-bottom: none;
+  border-left: none;
+  transform: translateX(5px) translateY(-1px) rotate(45deg);
+}
+#news .news ul {
+  
+  display: flex;
+  margin-top: 50px;
+  gap: 30px;
+  width: 100%;
+  justify-content: space-between;
+}
+#news .news ul li {
+  
+}
+#news .news ul li a{  
+  display: block;
+}
+#news .news ul li a::before {
+  content: "";  
+  display: inline-block;
+  width: 361px;
+  height: 361px;
+  background-size: 100%;
+  background-position: center;
+  transition: all 0.5s;
+}
+#news .news ul li a:hover::before{
+  background-size: 105%;
+}
+#news .news ul li:nth-child(1) a::before{  
+  background-image: url(../img/news1.jpg);
+}
+#news .news ul li:nth-child(2) a::before{  
+  background-image: url(../img/news2.png);
+}
+#news .news ul li a .h3 {  
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 372px;
+  font-size: 23px;
+  margin: 20px 0;
+  height: 25px;
+  letter-spacing: -1px;
+}
+#news .news ul li a .p {  
+  font-size: 18px;
+  line-height: 1.6;
+  color:#666;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 381px;
+  height: 62px;
+}
+#news .news ul li a .date {  
+  color:#bbb;
+}
+#news .sns {  
+  width: 361px;
+}
+#news .sns .h2 {
+  
+}
+#news .sns > a {
+  
+}
+#news .sns a .p { 
+  width: fit-content;
+  height: fit-content;
+  font-size: 22px;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+#news .sns a .p::before{
+  content: "";
+  display: inline-block;
+  width: 361px;
+  height: 361px;
+  background-image: url(../img/sns1.jpg);
+  background-size: 100%;
+  background-position: center;
+  transition: all 0.5s;
+  border-radius: 182px;
+  margin: 50px 0 20px 0;
+}
+#news .sns ul {  
+  display: flex;
+  justify-content: center;
+  gap: 34px;
+}
+#news .sns ul li {
+  
+}
+#news .sns ul li a {  
+  display: block;
+  width: 60px;
+  height: 60px;
+  font-size: 0;
+  border-radius: 30px;
+  background-color:#eee;
+}

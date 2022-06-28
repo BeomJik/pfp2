@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제약사업 소개</title>
+    <!-- 파비콘 -->
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="css/reset.css" type="text/css">
+    <!-- 구글폰트 noto sans korean -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">  
+    <!-- css -->
+    <link rel="stylesheet" href="css/common.css" type="text/css">
+    <link rel="stylesheet" href="css/header.css" type="text/css">
+    <link rel="stylesheet" href="css/pharmaceuticalsIntro-title.css" type="text/css">
+    <link rel="stylesheet" href="css/pharmaceuticalsIntro-main.css" type="text/css">
+    <link rel="stylesheet" href="css/footer.css" type="text/css">
+    <link rel="stylesheet" href="css/responsive.css" type="text/css">
+    <link rel="stylesheet" href="css/pharmaceuticalsIntro-responsive.css" type="text/css">
+    <!-- JS cdn -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- 부트스트랩 css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- 부트스트랩 js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- 상단 영역 -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="wrap container-fluid">
+                <h1 class="h1 navbar-brand">
+                    <a href="index.html">풍림무약주식회사</a>
+                </h1>
+                <a href="" class="allmenu">전체메뉴<span></span></a>
+                <div class="right collapse navbar-collapse" id="navbarNav">
+                    <ul class="gnb navbar-nav">
+                        <li class="nav-item">
+                            <h2 class="h4"><a href="aboutus.html">회사소개</a></h2>
+                            <ul class="sub">
+                                <li><a href="aboutus.html">회사소개</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <h2 class="h4"><a href="tradeIntro.html">무역사업</a></h2>
+                            <ul class="sub">
+                                <li><a href="tradeIntro.html">소개</a></li>
+                                <li><a href="mtBusiness.html">기능 재료 사업</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <h2 class="h4"><a href="pharmaceuticalsIntro.html">제약사업</a></h2>
+                            <ul class="sub">
+                                <li><a href="pharmaceuticalsIntro.html">소개</a></li>
+                                <li><a href="CDMO.html">CDMO사업</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <h2 class="h4"><a href="">뉴스룸</a></h2>
+                        </li>
+                        <li class="nav-item">
+                            <h2 class="h4"><a href="">채용</a></h2>
+                        </li>
+                        <li class="nav-item">
+                            <h2 class="h4"><a href="">문의</a></h2>
+                        </li>
+                    </ul>
+                    <ul class="enb navbar-nav">
+                        <li class="nav-item"><a href="" class="search">검색</a></li>
+                        <li class="nav-item"><a href="" class="lang">언어</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <script>
+        // 반응형
+        if( window.innerWidth < 769 ){
+            $("header .allmenu").css("display","flex");
+            // 서브메뉴 표시(햄버거 버튼)
+            $("header .allmenu").click(function(){
+                // 햄버거 버튼 모양 변경
+                $(this).toggleClass("x");
+                $("header .navbar").toggleClass("show");
+                // 대메뉴 나오게
+                $("header .right").toggleClass("show");
+                return false;
+            });
+            // 모바일에서 대메뉴 클릭시 바로 이동 아니고 소메뉴 나옴
+            $("header .gnb li .h4 a").attr("href","#");
+            $("header .gnb li").click(function(){  
+                $(this).children("header .gnb li .sub").slideToggle();
+                $("header .gnb li").not(this).children("header .gnb li .sub").slideUp();
+            });
+
+            // 스크롤 이벤트
+            $(window).scroll(function(){
+                windowTop = $(window).scrollTop();
+                if(windowTop > 50){
+                    $("header").addClass("move");
+                    // 스크롤 내리면 대메뉴 사라짐
+                    $("header .allmenu").removeClass("x");
+                    $("header .navbar").removeClass("show");
+                    $("header .right").removeClass("show");
+                }
+                if(windowTop < 50){
+                    $("header").removeClass("move");
+                }
+                if(windowTop > 500){
+                    $("header").addClass("moveUp");
+                    $("header .right").addClass("hide");
+                }
+                if(windowTop < 500){
+                    $("header").removeClass("moveUp");
+                    $("header .right").removeClass("hide");
+                }
+            });
+        }
+        
+    </script>
+    <!-- 타이틀 영역 -->
+    <div id="title">
+        <div class="wrap">
+            <h2 class="hide">무역사업 소개</h2>
+            <p class="h3">우수 품질의 의약품과 인체에 <br>유용한 기능성 원료를 공급합니다</p>
+        </div>
+    </div>
+    <!-- 내용 영역 -->
+    <main>
+        <section id="pharmaceuticalsIntro">
+            <div class="wrap">
+                <h3 class="hide">제약사업</h3>
+                <ul>
+                    <li>
+                        <a href="" class="go">
+                            <div class="imgA">
+                                <img src="img/pharmaceuticalsIntro1.jpg" alt="CDMO 사업">
+                                <span class="preview"></span>
+                            </div>
+                            <div class="textA">
+                            <h2 class="h2">CDMO 사업</h2>
+                                <p class="p">오랜 경험, 지속적인 연구개발을 통한 독자적인 기술력과 노하우로 우수한 의약품을 생산·공급합니다. 최첨단 생산시설과 체계적인 품질관리 시스템을 구축하고 있는 우수의약품제조업체(KGMP)로서 고객의 니즈를 충족시키는 최상의 서비스를 제공하고 있습니다.</p>
+                                <span class="btn">자세히보기</span>
+                            </div>
+                            <h3 class="h3">CDMO 사업</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="go">
+                            <div class="imgA">
+                                <img src="img/pharmaceuticalsIntro2.jpg" alt="천연물 사업">
+                                <span class="preview"></span>
+                            </div>
+                            <div class="textA">
+                                <h2 class="h2">천연물 사업</h2>
+                                <p class="p">다년간 축적된 의약품 제조 기술과 천연물 의약품 개발 경험을 기반으로 전문성과 정보력, 최적의 Pipeline을 보유하고 있습니다. 천연물 원료 개발부터 원물(원생약) 관리, 원료 추출 관리, 제품 연구, 원료 공급, 완제품 생산까지 천연물 의약품 개발 전반에 대한 고유의 프로세스를 구축하고 있으며 고객사의 요청에 따라 수행하는 맞춤형 연구개발 서비스 또한 제공합니다.</p>
+                                <span class="btn">자세히보기</span>
+                            </div>
+                            <h3 class="h3">천연물 사업</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="go">
+                            <div class="imgA">
+                                <img src="img/pharmaceuticalsIntro3.jpg" alt="완제의약품 사업">
+                                <span class="preview"></span>
+                            </div>
+                            <div class="textA">
+                                <h2 class="h2">완제의약품 사업</h2>
+                                <p class="p">의약품 품목 허가를 위한 RA 역량과 경험, 우수한 생산설비와 품질보증 시스템, GMP 관리를 기반으로 간편한 신규허가 상담 시스템을 구축하고, 전문 및 일반, 수입, 원료 의약품에 이르기까지 고객사가 원하는 품목의 런칭을 지원하고 있습니다. 또한 전국 각지에 보유한 거점 도매상 네트워크를 통해 자사 제품뿐 아니라 고객사의 다양한 완제품에 대한 유통·판매 서비스를 제공합니다.</p>
+                                <span class="btn">자세히보기</span>
+                            </div>
+                            <h3 class="h3">완제의약품 사업</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="go">
+                            <div class="imgA">
+                                <img src="img/pharmaceuticalsIntro4.jpg" alt="기능성 식품 사업">
+                                <span class="preview"></span>
+                            </div>
+                            <div class="textA">
+                                <h2 class="h2">기능성 식품 사업</h2>
+                                <p class="p">2003년 런칭한 종합 건강기능식품 전문 브랜드 ‘SUNMIN’을 통해 국내외 소비자들에게 우수한 품질의 제품을 지속적으로 선보이고 있습니다.</p>
+                                <span class="btn">자세히보기</span>
+                            </div>
+                            <h3 class="h3">기능성 식품 사업</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="go">
+                            <div class="imgA">
+                                <img src="img/pharmaceuticalsIntro5.jpg" alt="연구개발">
+                                <span class="preview"></span>
+                            </div>
+                            <div class="textA">
+                                <h2 class="h2">연구개발</h2>
+                                <p class="p">2006년 이래 판교 중앙연구소를 시점으로 2014년 서울대학교 약학대학 내에 R&D센터를 개소하여 천연물 소재 원료 개발과 제제 연구 및 허가에 관한 전문가로 구성된 R&D팀이 과제 기획과 연구 수행, 품목 허가에 이르는 의약품 개발 전 주기를 담당하며 효율적인 과제 목표 달성에 기여합니다. 앞으로도 지속적인 R&D 투자를 통해 국민의 건강 증진과 삶의 질 향상에 대한 사명감을 바탕으로 풍림무약의 미래성장 동력을 구축해 나갈 것입니다.</p>
+                                <span class="btn">자세히보기</span>
+                            </div>
+                            <h3 class="h3">연구개발</h3>
+                        </a>
+                    </li>                    
+                </ul>        
+            </div>
+        </section>
+    </main>
+    <!-- 하단 영역 -->
+    <footer>
+        <div class="wrap">
+           <div class="left">
+               <h2 class="h2">기업과 세상을 연결하는<span class="block"></span>풍림무약입니다</h2>
+           </div>
+           <div class="right">
+               <ul class="top">
+                   <li><a href="aboutus.php">회사소개</a></li>
+                   <li><a href="tradeIntro.php">무역사업</a></li>
+                   <li><a href="pharmaceuticalsIntro.php">제약사업</a></li>
+                   <li><a href="">뉴스룸</a></li>
+                   <li><a href="">채용</a></li>
+                   <li><a href="">문의</a></li>
+               </ul>
+               <div class="bottom">
+                   <h3 class="h3">RICHWOOD</h3>
+                   <address>
+                    대표 이정석 <span>사업자등록번호 104-81-02314</span> TEL 02-778-2351 <br>
+                    <span>FAX 02-756-5402 04527</span> 서울시 중구 소월로 10 남대문로5가 단암빌딩 16층
+                    </address>
+                   <a href="">개인정보처리방침</a>
+                   <a href="">이메일 무단수집거부</a>
+                   <p class="copy">COPYRIGHT 2021. RICHWOOD TRADING COMPANY, LTD. ALL RIGHTS RESERVED.</p>
+               </div>
+           </div>
+        </div>
+    </footer>
+    <script>
+        // 클릭시 주소 내려옴
+        $("footer .right .bottom address").hide();
+        $("footer .right .bottom h3").click(function(){
+            $(this).toggleClass("rot180");                
+            $("footer .right .bottom address").slideToggle();
+        });
+    </script>
+</body>
+</html>

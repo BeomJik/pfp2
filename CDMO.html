@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDMO 사업 소개</title>
+    <!-- 파비콘 -->
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="css/reset.css" type="text/css">
+    <!-- 구글폰트 noto sans korean -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">  
+    <!-- css -->
+    <link rel="stylesheet" href="css/common.css" type="text/css">
+    <link rel="stylesheet" href="css/header.css" type="text/css">
+    <link rel="stylesheet" href="css/CDMO-title.css" type="text/css">
+    <link rel="stylesheet" href="css/CDMO-main.css" type="text/css">
+    <link rel="stylesheet" href="css/footer.css" type="text/css">
+    <link rel="stylesheet" href="css/responsive.css" type="text/css">
+    <link rel="stylesheet" href="css/CDMO-responsive.css" type="text/css">
+    <!-- 폰트어썸 -->
+    <script src="https://kit.fontawesome.com/003457cfc7.js" crossorigin="anonymous"></script>
+    <!-- JS cdn -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- 부트스트랩 css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- 부트스트랩 js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- aos 스크롤 이벤트 -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>    
+    <script>
+        $(function(){
+            AOS.init();
+            $("body").attr("data-aos-duration","1500");
+        });
+    </script>
+</head>
+<body>
+    <!-- 상단 영역 -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="wrap container-fluid">
+                <h1 class="h1 navbar-brand">
+                    <a href="index.html">풍림무약주식회사</a>
+                </h1>
+                <a href="" class="allmenu">전체메뉴<span></span></a>
+                <div class="right collapse navbar-collapse" id="navbarNav">
+                    <ul class="gnb navbar-nav">
+                        <li class="nav-item">
+                            <h2 class="h4"><a href="aboutus.html">회사소개</a></h2>
+                            <ul class="sub">
+                                <li><a href="aboutus.html">회사소개</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <h2 class="h4"><a href="tradeIntro.html">무역사업</a></h2>
+                            <ul class="sub">
+                                <li><a href="tradeIntro.html">소개</a></li>
+                                <li><a href="mtBusiness.html">기능 재료 사업</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <h2 class="h4"><a href="pharmaceuticalsIntro.html">제약사업</a></h2>
+                            <ul class="sub">
+                                <li><a href="pharmaceuticalsIntro.html">소개</a></li>
+                                <li><a href="CDMO.html">CDMO사업</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <h2 class="h4"><a href="">뉴스룸</a></h2>
+                        </li>
+                        <li class="nav-item">
+                            <h2 class="h4"><a href="">채용</a></h2>
+                        </li>
+                        <li class="nav-item">
+                            <h2 class="h4"><a href="">문의</a></h2>
+                        </li>
+                    </ul>
+                    <ul class="enb navbar-nav">
+                        <li class="nav-item"><a href="" class="search">검색</a></li>
+                        <li class="nav-item"><a href="" class="lang">언어</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <script>
+        // 반응형
+        if( window.innerWidth < 769 ){
+            $("header .allmenu").css("display","flex");
+            // 서브메뉴 표시(햄버거 버튼)
+            $("header .allmenu").click(function(){
+                // 햄버거 버튼 모양 변경
+                $(this).toggleClass("x");
+                $("header .navbar").toggleClass("show");
+                // 대메뉴 나오게
+                $("header .right").toggleClass("show");
+                return false;
+            });
+            // 모바일에서 대메뉴 클릭시 바로 이동 아니고 소메뉴 나옴
+            $("header .gnb li .h4 a").attr("href","#");
+            $("header .gnb li").click(function(){  
+                $(this).children("header .gnb li .sub").slideToggle();
+                $("header .gnb li").not(this).children("header .gnb li .sub").slideUp();
+            });
+
+            // 스크롤 이벤트
+            $(window).scroll(function(){
+                windowTop = $(window).scrollTop();
+                if(windowTop > 50){
+                    $("header").addClass("move");
+                    // 스크롤 내리면 대메뉴 사라짐
+                    $("header .allmenu").removeClass("x");
+                    $("header .navbar").removeClass("show");
+                    $("header .right").removeClass("show");
+                }
+                if(windowTop < 50){
+                    $("header").removeClass("move");
+                }
+                if(windowTop > 500){
+                    $("header").addClass("moveUp");
+                    $("header .right").addClass("hide");
+                }
+                if(windowTop < 500){
+                    $("header").removeClass("moveUp");
+                    $("header .right").removeClass("hide");
+                }
+            });
+        }
+        
+    </script>
+    <!-- 타이틀 영역 -->
+    <div id="title">
+        <div class="wrap">
+            <h2 class="h2">CDMO사업</h2>
+        </div>
+    </div>
+    <!-- 내용 영역 -->
+    <main>
+        <!-- CDMO 사업부 -->
+        <section id="cdmo">
+            <div class="wrap">
+                <span class="txtA">오랜 경험, 지속적인 연구개발을 통한 <br>
+                    독자적인 기술력과 노하우로 우수한 <br>
+                    의약품을 생산·공급합니다.</span>
+                <spsn class="imgA">
+                    <img src="img/cdmo-about.jpg" alt="CDMO사업">
+                </spsn>
+            </div>
+        </section>
+        <!-- 사업 영역 -->
+        <section id="business">
+            <div class="wrap">
+                <span class="h2Wrap"><h2 class="h2" data-aos="fade-up">사업 영역</h2></span>
+                <p class="p" data-aos="fade-up">풍림무약은 최첨단 생산시설과 체계적인 품질관리 시스템을 구축하고 있는 우수의약품제조업체(KGMP)로서 오랜 경험, 지속적인 연구개발을 통한 독자적인 기술력과 노하우로 우수한 의약품을 생산·공급하고 있으며, 고객의 다양한 요구를 충족시키는 최적의 프로세스를 구축하여 제품의 기획부터 출하에 이르는 모든 단계에서 최상의 서비스를 제공합니다. </p>
+            </div>
+        </section>
+        <!-- OEM/ODM -->
+        <section id="process">
+            <div class="wrap">
+                <div class="textA">
+                    <span class="h2Wrap"><h2 class="h2" data-aos="fade-up">OEM/ODM 개발PROCESS</h2></span>
+                    <p class="p" data-aos="fade-up">글로벌 의약품 제조기준을 충족하는 CDMO전문 기업으로서 제품의 기획부터 출하에 이르는 모든 단계에 <br> 최적의 프로세스를 갖추고 있으며, 고객사와 긴밀한 커뮤니케이션을 통해 필요에 부합하는 최적의 제품을 공급합니다.</p>
+                </div>
+                <div class="oWrap">
+                    <div class="oem">
+                        <div class="textA" data-aos="fade-up">
+                            <h2 class="h2">OEM</h2>
+                            <p class="p disabled">고객사 개발영역</p>
+                            <p class="p activate">풍림무약 개발영역</p>
+                        </div>
+                        <div class="circleA" data-aos="fade-up">
+                            <ul class="circle">
+                                <li><span>제품기획</span></li>
+                                <li><span>품목선정</span></li>
+                                <li><span>위탁범위결정</span></li>
+                                <li><span>위탁단가계약</span></li>
+                                <li><span>위탁생산</span></li>
+                                <li><span>품질검사</span></li>
+                                <li><span>납품</span></li>
+                            </ul>
+                            <p class="p">제품출하</p>
+                        </div>
+                    </div>
+                    <div class="odm">
+                        <div class="textA" data-aos="fade-up">
+                            <h2 class="h2">ODM</h2>
+                            <p class="p disabled">고객사 개발영역</p>
+                            <p class="p activate">풍림무약 개발영역</p>
+                        </div>
+                        <div class="circleA" data-aos="fade-up">
+                            <ul class="circle">
+                                <li>
+                                    <span>제품기획</span>
+                                    <p class="p">시장조사, 수요검토, <br> 유통판매구조 파악</p>
+                                </li>
+                                <li>
+                                    <span>품목선정</span>
+                                    <p class="p">제품 전반에 관한 <br> 사항 선정</p>
+                                </li>
+                                <li>
+                                    <span>위탁범위결정</span>
+                                    <p class="p">생산에 따른 위수탁 <br> 생산 범위 결정</p>
+                                </li>
+                                <li>
+                                    <span>위탁단가계약</span>
+                                    <p class="p">위탁범위에 따른 <br> 단가계약 체결</p>
+                                </li>
+                                <li>
+                                    <span>위탁생산</span>
+                                    <p class="p">위탁범위에 따른 <br> 제품 생산</p>
+                                </li>
+                                <li>
+                                    <span>품질검사</span>
+                                    <p class="p">제품 출하 전 <br> 품질검사 실시</p>
+                                </li>
+                                <li>
+                                    <span>납품</span>
+                                    <p class="p">품질검사 후 위탁사 <br> 지정장소에 납품</p>
+                                </li>
+                            </ul>
+                            <p class="p">제품출하</p>                        
+                        </div>
+                    </div>
+                </div>
+                <div class="oWrapM">
+                    <div class="textA" data-aos="fade-up">
+                        <hgroup>
+                            <h2 class="h2 oemH2">OEM</h2>
+                            <h2 class="h2 odmH2">ODM</h2>
+                        </hgroup>
+                        <p class="p disabled">고객사 개발영역</p>
+                        <p class="p activate">풍림무약 개발영역</p>
+                    </div>
+                    <div class="circleA" data-aos="fade-up">
+                        <ul class="circle">
+                            <li><span>제품기획</span></li>
+                            <li><span>품목선정</span></li>
+                            <li><span>위탁범위결정</span></li>
+                            <li><span>위탁단가계약</span></li>
+                            <li><span>위탁생산</span></li>
+                            <li><span>품질검사</span></li>
+                            <li><span>납품</span></li>
+                            <li><span>제품출하</span></li>
+                        </ul>
+                    </div>
+                    <ul class="list" data-aos="fade-up">
+                        <li>
+                            <h3 class="h3">제품기획</h3>
+                            <p class="p">시장조사, 수요검토, 유통판매 구조 파악</p>
+                        </li>
+                        <li>
+                            <h3 class="h3">품목선정</h3>
+                            <p class="p">제품 전반에 관한 사항 선정</p>
+                        </li>
+                        <li>
+                            <h3 class="h3">위탁범위결정</h3>
+                            <p class="p">생산에 따른 위수탁 생산 범위 결정</p>
+                        </li>
+                        <li>
+                            <h3 class="h3">위탁단가계약</h3>
+                            <p class="p">위탁범위에 따른 단가계약 체결</p>
+                        </li>
+                        <li>
+                            <h3 class="h3">위탁생산</h3>
+                            <p class="p">위탁범위에 따른 제품 생산</p>
+                        </li>
+                        <li>
+                            <h3 class="h3">품질검사</h3>
+                            <p class="p">제품 출하 전 품질검사 실시</p>
+                        </li>
+                        <li>
+                            <h3 class="h3">납품</h3>
+                            <p class="p">품질검사 후 위탁사 지정장소에 납품</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <script>
+            // 769 미만
+            if( window.innerWidth < 769 ){
+                let oWrap = document.querySelector("#process .oWrap");
+                let oWrapM = document.querySelector("#process .oWrapM");
+                let oemH2 = document.querySelector("#process .oWrapM .oemH2");
+                let odmH2 = document.querySelector("#process .oWrapM .odmH2");
+
+                oWrap.classList.add("hide");
+                oWrapM.classList.remove("hide");
+                odmH2.classList.add("disabled");
+
+                oemH2.addEventListener("click",function(){
+                    this.classList.remove("disabled");
+                    odmH2.classList.add("disabled");
+                    oWrapM.classList.remove("activate");
+                });
+                odmH2.addEventListener("click",function(){
+                    this.classList.remove("disabled");
+                    oemH2.classList.add("disabled");
+                    oWrapM.classList.add("activate");
+                });
+            }
+            // 너비 768 초과
+            if( window.innerWidth > 768 ){
+                let oWrapM = document.querySelector("#process .oWrapM");
+                let oWrap = document.querySelector("#process .oWrap");
+                oWrapM.classList.add("hide");
+                oWrap.classList.remove("hide");
+            }
+            // resize 이벤트
+            window.addEventListener('resize', function(){
+                // 769 미만
+                if( window.innerWidth < 769 ){
+                    let oWrap = document.querySelector("#process .oWrap");
+                    let oWrapM = document.querySelector("#process .oWrapM");
+                    oWrap.classList.add("hide");
+                    oWrapM.classList.remove("hide");
+                }    
+                // 너비 768 초과
+                if( window.innerWidth > 768 ){
+                    let oWrap = document.querySelector("#process .oWrap");
+                    let oWrapM = document.querySelector("#process .oWrapM");
+                    oWrapM.classList.add("hide");
+                    oWrap.classList.remove("hide");
+                }               
+            });
+        </script>
+        <!-- Product List -->
+        <section id="productList">
+            <div class="wrap">
+                <div class="textA">
+                    <span class="h2Wrap"><h2 class="h2" data-aos="fade-up">OEM/ODM Product List</h2></span>
+                </div>
+                <table data-aos="fade-up">
+                    <thead>
+                        <tr>
+                            <th>OEM·ODM</th>
+                            <th>UNDER DEVELOPMENT</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>센텔라정량추출물</li>
+                                    <li>Diosmin</li>
+                                    <li>은행엽건조엑스</li>
+                                    <li>Bepotastine besilate</li>
+                                    <li>애엽95%에탄올연조엑스(20→1)</li>
+                                    <li>Baclofen</li>
+                                    <li>Levodropropizine</li>
+                                    <li>Atorvastatin calcium trihydrate</li>
+                                    <li>Epinastine HCl</li>
+                                    <li>Amlodipine besilate</li>
+                                    <li>Ebastine+Pseudoephedrine HCI</li>
+                                    <li>Acetaminophen+Tramadol HCl</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Dapagliflozin</li>
+                                    <li>Dapagliflozin+Metformin HCl</li>
+                                    <li>달맞이꽃종자유</li>
+                                    <li>위령선·괄루근·하고초30%에탄올건조엑스(40→1)</li>
+                                    <li>자오가·우슬·방풍·두충·구척·흑두건조엑스(20→1)</li>
+                                    <li>현호색·견우자(5:1) 50%에탄올연조엑스(9.5~11.5→1)</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <!-- 제조가능제형 -->
+        <section id="mainItems">
+            <div class="wrap">
+                <div class="textA">
+                    <span class="h2Wrap"><h2 class="h2" data-aos="fade-up">제조가능제형</h2></span>
+                    <p class="p" data-aos="fade-up">내용고형제(정제·경질캡슐제·과립제·산제) 제조 경험 및 설비 보유</p>
+                </div>
+                <ul class="list">
+                    <li data-aos="fade-up" data-aos-delay="300">
+                        <img class="img" src="img/01-2-361x361.jpg" alt="정제 (단층정)">
+                        <img class="icon" src="img/formulation-single.svg" alt="정제 (단층정)">
+                        <h3 class="h3">정제 (단층정)</h3>
+                    </li>
+                    <li data-aos="fade-up" data-aos-delay="400">
+                        <img class="img" src="img/02-9-361x361.jpg" alt="정제 (다층정)">
+                        <img class="icon" src="img/formulation-multi.svg" alt="정제 (다층정)">
+                        <h3 class="h3">정제 (다층정)</h3>
+                    </li>
+                    <li data-aos="fade-up" data-aos-delay="500">
+                        <img class="img" src="img/03-5-361x361.jpg" alt="경질캡슐">
+                        <img class="icon" src="img/formulation-capsule.svg" alt="경질캡슐">
+                        <h3 class="h3">경질캡슐</h3>
+                    </li>
+                    <li data-aos="fade-up" data-aos-delay="600">
+                        <img class="img" src="img/04-1-361x361.jpg" alt="과립제·산제">
+                        <img class="icon" src="img/formulation-powder.svg" alt="과립제·산제">
+                        <h3 class="h3">과립제·산제</h3>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- 주요 생상설비-->
+        <section id="production">
+            <div class="wrap">
+                <div class="textA"><span class="h2Wrap"><h2 class="h2" data-aos="fade-up">주요 생산설비</h2></span></div>
+                <ul class="list" data-aos="fade-up">
+                    <li>
+                        <img src="img/prd-facility-01.jpg" alt="고속혼합기" class="img-fluid">
+                        <h3 class="h3">고속혼합기</h3>
+                        <p class="p">고속회전이 가능하며, 아지데이터와 쵸파를 사용한 대용량 혼합 및 연합물 형성</p>
+                    </li>
+                    <li>
+                        <img src="img/prd-facility-02.jpg" alt="유동층건조기" class="img-fluid">
+                        <h3 class="h3">유동층건조기</h3>
+                        <p class="p">건조 공정 전용 설비이며, 원료이송이 원활하도록 LIFT 안착</p>
+                    </li>
+                    <li>
+                        <img src="img/prd-facility-03.jpg" alt="유동층과립기 (GPCG 60)" class="img-fluid">
+                        <h3 class="h3">유동층과립기 (GPCG 60)</h3>
+                        <p class="p">CAPACITY(/G) 20,000~60,000 실생산용(과립, 펠렛코딩)</p>
+                    </li>
+                    <li>
+                        <img src="img/prd-facility-04.jpg" alt="F형 더블정립기" class="img-fluid">
+                        <h3 class="h3">F형 더블정립기</h3>
+                        <p class="p">고속회전이 가능하며, 아지데이터와 쵸파를 사용한 대용량 혼합 및 연합물 형성</p>
+                    </li>
+                    <li>
+                        <img src="img/prd-facility-05.jpg" alt="더블콘믹서" class="img-fluid">
+                        <h3 class="h3">더블콘믹서</h3>
+                        <p class="p">대용량 혼합기로 사용되며, 혼합물 이송을 원활하도록 Lift 안착</p>
+                    </li>
+                    <li>
+                        <img src="img/prd-facility-06.jpg" alt="로타리타정기" class="img-fluid">
+                        <h3 class="h3">로타리타정기</h3>
+                        <p class="p">높은 생산성을 가지고, 신속하고 안정적인 설비운영이 가능</p>
+                    </li>
+                    <li>
+                        <img src="img/prd-facility-07.jpg" alt="더블타정기" class="img-fluid">
+                        <h3 class="h3">더블타정기</h3>
+                        <p class="p">더블 Type 제제 생산 설비이며, 자동 중량 조절(A.W.C) 장착에 따라 컴퓨터 시스템으로 제어되어 보다 정확한 양품의 정제 생산이 가능</p>
+                    </li>
+                    <li>
+                        <img src="img/prd-facility-08.jpg" alt="삼중정타정기" class="img-fluid">
+                        <h3 class="h3">삼중정타정기</h3>
+                        <p class="p">다층정 제제 상산 및 자동 중량 조절(A.W.C) 장착에 따라 컴퓨터 시스템으로 제어되어 보다 정확한 양품의 정제 생산이 가능</p>
+                    </li>
+                    <li>
+                        <img src="img/prd-facility-09.jpg" alt="캡슐충전기" class="img-fluid">
+                        <h3 class="h3">캡슐충전기</h3>
+                        <p class="p">펠렛 충전 및 파우더 충전 가능</p>
+                    </li>
+                    <li>
+                        <img src="img/prd-facility-10.jpg" alt="필름코팅기" class="img-fluid">
+                        <h3 class="h3">필름코팅기</h3>
+                        <p class="p">HI-COATER 방식으로 균일한 코팅이 가능한 4개의 SPRAY GUN 장착되어 효율적인 공정 운영이 가능</p>
+                    </li>
+                    <li>
+                        <img src="img/prd-facility-11.jpg" alt="" class="img-fluid">
+                        <h3 class="h3">자동선별기</h3>
+                        <p class="p">정제 및 캡슐 선별이 가능, 17개(3D 2대 포함) 카메라가 불량 이미지를 촬영하여 불량분을 완벽하게 구분, 무인 운전, 원격 시스템 제어</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- 안내문의 -->
+        <section id="inquiry">
+            <div class="wrap">
+                <div class="cdmoinquiry">
+                    <a href="">
+                        <h2 class="h2">제약사업 안내 및 문의</h2>
+                        <p class="phone">전화 상담 <span>02-757-3071</span></p>
+                        <p class="cs">소비자 상담실 <span>02-2262-7550</span></p>
+                    </a>
+                </div>
+                <div class="cmdoBis">
+                    <a href="">
+                        <h2 class="h2">CMDO사업</h2>
+                        <p class="phone">전화 상담 <span>02-2262-7510</span></p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- 하단 영역 -->
+    <footer>
+        <div class="wrap">
+           <div class="left">
+               <h2 class="h2">기업과 세상을 연결하는<span class="block"></span>풍림무약입니다</h2>
+           </div>
+           <div class="right">
+               <ul class="top">
+                   <li><a href="aboutus.php">회사소개</a></li>
+                   <li><a href="tradeIntro.php">무역사업</a></li>
+                   <li><a href="pharmaceuticalsIntro.php">제약사업</a></li>
+                   <li><a href="">뉴스룸</a></li>
+                   <li><a href="">채용</a></li>
+                   <li><a href="">문의</a></li>
+               </ul>
+               <div class="bottom">
+                   <h3 class="h3">RICHWOOD</h3>
+                   <address>
+                    대표 이정석 <span>사업자등록번호 104-81-02314</span> TEL 02-778-2351 <br>
+                    <span>FAX 02-756-5402 04527</span> 서울시 중구 소월로 10 남대문로5가 단암빌딩 16층
+                    </address>
+                   <a href="">개인정보처리방침</a>
+                   <a href="">이메일 무단수집거부</a>
+                   <p class="copy">COPYRIGHT 2021. RICHWOOD TRADING COMPANY, LTD. ALL RIGHTS RESERVED.</p>
+               </div>
+           </div>
+        </div>
+    </footer>
+    <script>
+        // 클릭시 주소 내려옴
+        $("footer .right .bottom address").hide();
+        $("footer .right .bottom h3").click(function(){
+            $(this).toggleClass("rot180");                
+            $("footer .right .bottom address").slideToggle();
+        });
+    </script>
+</body>
+</html>

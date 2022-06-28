@@ -1,0 +1,166 @@
+@media(max-width:768px){
+  html body{    
+    background-image: url(../img/about-bg-mob.jpg);
+    background-size: cover;
+  }
+  /* title */
+  #title{    
+    padding: 100px 0 0 0;
+    height: 80%;
+  }
+  #title .wrap {
+    width: calc(100% - 30px);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: self-start;
+  }
+  #title h2.h2{    
+    font-size: 70px;
+  }
+  #title p.h3{    
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 1.6;
+    width: 80%;
+  }
+  /*  main  */
+  main section{
+    padding: 50px 0;
+    height: initial;
+  }
+  main section .wrap{    
+    flex-direction: column;
+     width: calc(100% - 60px) !important;
+  }
+  [data-aos^="fade"][data-aos^="fade"]{
+    opacity: 1 !important;
+  }
+  [data-aos="fade-up"] {
+    transform: translate3d(0,0,0) !important;
+  }
+  main section h2.h4{  
+    font-size: 20px;
+  }
+  main section p.h3{
+    font-size: 20px;
+  }
+  .clear{
+    opacity: 1;
+  }
+  section .wrap .left{    
+    width: 100%;
+  }
+  section .imgWrap{    
+    height: 300px;
+    width: 300px;
+    transform: translateX(30px) translateY(50px);
+  }
+  section .imgWrap img{
+    opacity: 1 !important;
+    transform: initial !important;
+    width: 100%;
+  }
+  section .h2Wrap h2.h2{
+    font-size: 40px;
+  }
+  #information .wrap{    
+    height: initial;
+  }
+  #information ul.list{
+    transform: translateY(10%);
+    width: 100%;
+  }
+  #information ul.list li{
+    width: 50%;
+  }
+  #overview .wrap{
+    height: initial;    
+  } 
+  #overview .right{
+    width: 100%;
+    gap: 5%;
+  }
+  #overview div h3.h3{
+    font-size: 25px;
+    margin: 50px 0 30px;
+  }
+  #overview .restrictions h3.h3{
+    margin-top: 0;
+  }
+  #overview div p.p{
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.8;
+  }
+  #overview div ul{
+    flex-wrap: wrap;
+    margin-top: 50px;
+    width: 100% !important;
+    gap: 20px;
+    justify-content: center;
+  }
+  #overview div ul li{
+    width: 110px;
+    height: 110px;
+    text-align: center;    
+  }
+  #overview .trade ul li:nth-of-type(2){
+    padding: 5px;
+  }  
+  #overview .trade ul li:nth-last-child(1){
+    display: none;
+  }
+  #overview .trade ul li::after {
+    content: "";
+    display: block;
+    width: 35px;
+    height: 20px;
+    border-top: 2px solid #d60000;
+    position: absolute;
+    top: calc(50% - 2px);
+    right: -34px;
+  }
+  #overview .trade ul li:nth-last-child(2)::after{
+    content: "";
+    display: none;
+  }
+  #overview .trade ul li:nth-last-child(4)::after{
+    content: "";
+    display: none;
+  }
+  #overview .restrictions ul li::after {
+    content: "";
+    display: block;
+    width: 35px;
+    height: 20px;
+    border-top: 2px solid #7899ff;
+    position: absolute;
+    top: calc(50% - 2px);
+    right: -34px;
+  }
+  #overview .restrictions ul li:nth-last-child(1)::after{
+    content: "";
+    display: none;
+  }
+  #overview .restrictions ul li:nth-last-child(3)::after{
+    content: "";
+    display: none;
+  }
+  #greetings .right{
+    width: 100%;
+  }
+  #greetings p.p{
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.6;
+  }
+  #greetings p.p:nth-of-type(1){
+    margin: 50px 0 30px;
+  }
+  #greetings img{
+    margin: 40px 0;
+    width: 70%;
+  }
+}

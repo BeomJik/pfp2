@@ -1,0 +1,157 @@
+main {
+}
+main section {
+  padding: 260px 0; 
+}
+main section .wrap{
+  width: calc(100% - 30px);
+}
+#tradeIntro{
+  height: 100%;
+}
+
+#tradeIntro .wrap{
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  width: calc(100% - 30px);
+}
+
+#tradeIntro .wrap ul{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 0 50px;
+  box-sizing: border-box;
+}
+
+#tradeIntro .wrap ul li{
+  max-width: 680px;
+  max-height: 680px;
+  width: 100%;
+  margin: 20px;
+  width: 42vw;
+  height: 42vw;
+}
+
+#tradeIntro .wrap ul li a{
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+#tradeIntro .wrap ul li a .imgA{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#tradeIntro .wrap ul li a .imgA .preview{  
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#tradeIntro .wrap ul li:nth-child(1) a .imgA .preview{
+  background-color:#404080;
+}
+
+#tradeIntro .wrap ul li:nth-child(2) a .imgA .preview{
+  background-color:#ffa0c0;
+}
+
+#tradeIntro .wrap ul li:nth-child(3) a .imgA .preview{
+  background-color:#e0a000;
+}
+
+#tradeIntro .wrap ul li:nth-child(4) a .imgA .preview{
+  background-color:#e0c0c0;
+}
+
+#tradeIntro .wrap ul li:nth-child(5) a .imgA .preview{
+  background-color:#000000;
+}
+
+#tradeIntro .wrap ul li a .imgA img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+#tradeIntro .wrap ul li a .textA{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.3s; 
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#tradeIntro .wrap ul li a .textA:hover{
+  background: #d60000;
+  opacity: 1;
+}
+
+#tradeIntro .wrap ul li a .textA > *{
+  transform: translateY(100px);
+  opacity: 0;
+}
+
+#tradeIntro .wrap ul li a .textA:hover > *{
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+#tradeIntro .wrap ul li a .textA .h2{
+  font-size: 45px;
+  transition: all 0.5s;
+}
+
+#tradeIntro .wrap ul li a .textA .p{  
+  margin: 50px 40px 0;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.6;
+  transition: all 0.7s;  
+}
+
+#tradeIntro .wrap ul li a .textA .btn{
+  font-size: 0;
+  margin: 40px 0 0 0;
+  transition: all 1s;
+}
+
+#tradeIntro .wrap ul li a .textA .btn::before{
+  content: "";
+  background-image: url(../img/arrow-right.svg);
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#tradeIntro .wrap ul li a .h3{
+  position: absolute;
+  bottom: 10%;
+  left: 7%;
+  z-index: 1;
+  color: #fff;
+  font-size: 22px;
+}

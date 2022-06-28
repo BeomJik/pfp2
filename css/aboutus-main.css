@@ -1,0 +1,415 @@
+main{
+  
+}
+
+section {
+  transition: all 1s;
+  height: 800px;
+  padding: 100px 0; 
+  box-sizing: initial;
+}
+
+section .wrap { 
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+  width: calc(100% - 30px);
+}
+section .wrap .left{
+}
+section .h2Wrap{
+  overflow: hidden;
+  display: block;
+  width: fit-content;
+  height: fit-content;
+  transform: translateY(10%);
+}
+section h2.h4 {  
+  font-size: 35px;
+  margin: 80px 0 20px;
+}
+section p.h3 {  
+  font-size: 45px;
+  line-height: 1.4;
+}
+section .imgWrap{
+  width: 600px;
+  height: 600px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ #medicinespan{
+  border-radius: 300px;
+}
+section img {  
+  transition: all 1s;
+  transform:scale(1.2);
+}
+/* .up{
+  transform: translateY(0) !important;
+} */
+.up{
+  animation-name: up;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-direction: reverse;
+}
+@keyframes up{
+  0%{
+    transform: translateY(0);
+  }
+  100%{
+    transform: translateY(10%);
+  }
+}
+
+.up2{
+  animation-name: up2;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-direction: reverse;
+}
+@keyframes up2{
+  0%{
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100%{
+    transform: translateY(20%);
+    opacity: 0;
+  }
+}
+.up3{
+  animation-name: up3;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-direction: reverse;
+}
+@keyframes up3{
+  0%{
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100%{
+    transform: translateY(30%);
+    opacity: 0.5;
+  }
+}
+.up4{
+  animation-name: up4;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  animation-direction: reverse;
+}
+@keyframes up4{
+  0%{
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100%{
+    transform: translateY(40%);
+    opacity: 0;
+  }
+}
+[data-aos="zoom-in"] {
+  transform:scale(1) !important;
+}
+.small {  
+  transform:scale(1.1) !important;
+}
+.clear{
+  opacity: 0;
+}
+ #founding {
+  
+}
+
+ #founding .wrap {
+  
+}
+
+ #founding h2.h4 {
+  
+}
+
+ #founding p.h3 {
+  
+}
+
+ #founding img {
+  
+}
+
+ #medicine {
+  
+}
+
+ #medicine .wrap {
+  
+}
+
+ #medicine h2.h4 {
+  
+}
+
+ #medicine p.h3 {
+  
+}
+
+ #medicine img {  
+  border-radius: 50%;
+  height: 100%;
+}
+
+ #laboratory {
+  
+}
+
+ #laboratory .wrap {
+  
+}
+
+ #laboratory h2.h4 {
+  
+}
+
+ #laboratory p.h3 {
+  
+}
+
+ #laboratory img {
+  
+}
+
+ #information {
+  
+}
+
+ #information .wrap {  
+  text-align: center;
+  align-items: initial;
+  height: 100%;
+}
+
+ #information h2.h2 {  
+}
+
+ #information ul.list {  
+  display: flex;
+  flex-wrap: wrap;
+  width: 60%;
+  height: 100%;
+  align-items: start;
+}
+
+ #information ul.list li { 
+  width: 25%;
+}
+ #information ul.list li:nth-child(1){
+  height: 230px;
+}
+ #information ul.list li:nth-child(2){
+  height: calc(230px + 20px );
+}
+ #information ul.list li:nth-child(3){
+  height: calc(230px + 40px );
+}
+ #information ul.list li:nth-child(4){
+  height: calc(230px + 60px );
+}
+ #information ul.list li:nth-child(5){
+  height: calc(230px + 80px );
+}
+ #information ul.list li:nth-child(6){
+  height: calc(230px + 100px );
+}
+ #information ul.list li i{ 
+  transform:scale(6);
+  display: inline-block;
+}
+ #information ul.list li h3.h3 {  
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 2;
+  margin-top: 50px;
+}
+
+ #information ul.list li p.p {  
+  font-size: 18px;
+  letter-spacing: -2px;
+  font-weight: 400;
+  color: #999;
+}
+
+ #overview {
+  
+}
+
+ #overview .wrap {  
+  align-items: initial;
+  /*! justify-content:space-between; */
+  height: 100%;
+}
+
+ #overview h2.h2 {
+  
+}
+
+ #overview .right {  
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+  width: 60%;
+  gap: 15%;
+}
+ #overview div {
+  width: 100%;
+  height: 50%;
+}
+ #overview div h3.h3 {
+  
+}
+
+ #overview div p.p {
+  
+  font-size: 18px;
+}
+
+ #overview div ul {  
+  display: flex;
+  justify-content:space-around;
+  height: 50%;
+  align-items: center;
+  border: 1pxsolid #ddd;
+  border-radius: 150px; 
+}
+
+ #overview div ul li { 
+  height: 120px;
+  width: 120px;
+  border-radius: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+ #overview .trade { 
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+}
+
+ #overview .trade h3.h3 {
+  
+}
+
+ #overview .trade p.p {
+  
+}
+
+ #overview .trade ul {
+  
+}
+
+ #overview .trade ul li {
+  background-color: #d60000;
+  position: relative;
+}
+ #overview .trade ul li::after{
+  content: "";
+  display: block;
+  width: 35px;
+  height: 20px;
+  border-top: 2px dotted #d60000;
+  position: absolute;
+  top: calc(50% - 2px);
+  right: -34px;
+}
+ #overview .trade ul li:nth-last-of-type(1)::after{
+  content: "";
+  display: none;
+}
+ #overview .restrictions {  
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+}
+
+ #overview .restrictions h3.h3 {
+  
+}
+
+ #overview .restrictions p.p {
+  
+}
+
+ #overview .restrictions ul {
+  
+  width: 83%;
+}
+ #overview .restrictions ul li {
+  background-color: #003dff;
+  position: relative;
+}
+ #overview .restrictions ul li::after{
+  content: "";
+  display: block;
+  width: 35px;
+  height: 20px;
+  border-top: 2px dotted #7899ff;
+  position: absolute;
+  top: calc(50% - 2px);
+  right: -34px;
+}
+ #overview .restrictions ul li:nth-last-of-type(1)::after{
+  content: "";
+  display: none;
+}
+ #greetings {
+  
+}
+
+ #greetings .wrap { 
+  align-items: initial;
+  padding: 100px 0;
+  border-top: 1px solid #ddd;
+}
+
+ #greetings h2.h2 {
+  
+}
+ #greetings .right {
+  
+  width: 60%;
+}
+ #greetings p.p {
+  font-size: 25px;
+}
+ #greetings p.p:nth-of-type(2){  
+  margin: 40px 0;
+}
+ #greetings img {  
+  margin: 40px 0 40px 20px;
+  width: 30%;
+}
+
+ #greetings a.download {
+  width: 240px;
+  height: 80px;
+  background-color: #fff;
+  border: 3px solid #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 600;
+  
+  transition: all 0.3s;
+}
+ #greetings a.download:hover {
+  border-color: #000;
+  border-radius: 40px;
+}

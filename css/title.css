@@ -1,0 +1,327 @@
+#title {
+  padding-top: 130px; 
+}
+#title .wrap { 
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+#title .wrap .swiper{
+  max-width: 100%;
+  padding: 0;
+}
+#title .tSildeBtnA{
+  
+}
+#title ul.slide{
+  /*! height: 100%; */
+  display: flex;
+  color: #fff;
+}
+#title ul.slide li{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 664px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+#title .slide li iframe{
+  /*! width: 1902px; */
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  z-index: 0;
+}
+#title ul.slide .t1{
+  background-image: url(../img/title1.jpeg);
+}
+#title ul.slide .t2{
+  background-image: url(../img/title2.jpg);
+}
+#title ul.slide .t3{
+ background-image: url(../img/title3.jpeg);
+}
+#title ul.slide .t4{
+  background-image: url(../img/title4.jpg);
+}
+#title ul.slide li h2{
+  margin-bottom: 10px;
+  transition: all 0.4s;
+  font-size: 80px;
+  font-weight: 700;
+  opacity: 0;
+  
+}
+#title ul.slide li p{
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 2;
+  padding: 20px 0 50px;
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+
+#title ul.slide li a{
+  color: #fff;
+  text-transform: uppercase;
+  border-bottom: 2px solid #fff;
+  display: block;
+  width: fit-content;
+  line-height: 1.6;
+  font-size: 18px;
+  animation-delay: 0.5s;
+  opacity: 0;
+}
+
+.slideUp{
+  animation: slideUp 1s ease-in-out reverse forwards;
+}
+@keyframes slideUp{
+  0%{
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100%{
+    opacity: 0;
+    transform: translateY(100px);
+  }
+}
+
+#title .swiper-button-prev{  
+  left: 70px;
+}
+#title .swiper-button-next{
+  right: 70px;
+}
+#title .swiper-button-prev, 
+#title .swiper-button-next{
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s cubic-bezier(.68,-0.55,.27,1.55);
+  border-radius: 22px;
+  border: 2px solid #ffffff59;
+}
+#title .swiper-button-prev:hover, 
+#title .swiper-button-next:hover{
+  border-color: #fff;
+  flex-direction: initial;
+  justify-content: space-evenly;
+  width: 100px;
+  border-radius: 40px;
+}
+#title .swiper-button-next:hover{
+  flex-direction: row-reverse;
+}
+#title .swiper-button-prev::after, 
+#title .swiper-button-next::after{
+  transition: all 0.5s;
+}
+#title .swiper-button-prev::before{ /* 왼쪽 화살표 */
+  content: "";
+  width: 10px;
+  height: 10px;
+  display: block;
+  border: 2px solid #ffffffdb;
+  border-right: transparent;
+  border-bottom: transparent;
+  transform: translateX(2px) rotate(-45deg);
+}
+#title .swiper-button-prev:hover::before{
+  border: 2px solid #fff;
+  border-right: transparent;
+  border-bottom: transparent;
+  transform: translateX(2px) rotate(-45deg);
+  animation-name: slideprevarrow;
+  animation-duration: 0.3s;
+  animation-direction: reverse;
+  animation-fill-mode: initial;
+}
+@keyframes slideprevarrow{
+  0%{
+    opacity: 1;
+    transform: translateX(2px) rotate(-45deg);
+  }
+  100%{
+    opacity: 0;
+    transform: translateX(-100%) rotate(-45deg);
+  }
+}
+#title .swiper-button-prev::after{
+  content: "PREV";
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 1px;
+  transition: all 0.5s;
+  display: none;
+  font-family: initial;
+}
+#title .swiper-button-prev:hover::after{ 
+  display: block;
+  animation-name: slideprev;
+  animation-duration: 0.3s;
+  animation-direction: reverse;
+  animation-fill-mode: initial;
+}
+@keyframes slideprev{
+  0%{
+    opacity: 1;
+    transform: translateX(0%);
+  }
+  100%{
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+}
+#title .swiper-button-next::before{ /* 오른쪽 화살표 */
+  content: "";
+  width: 10px;
+  height: 10px;
+  display: block;
+  border: 2px solid #ffffffdb;
+  border-left: transparent;
+  border-bottom: transparent;
+  transform: translateX(-2px) rotate(45deg);
+}
+#title .swiper-button-next:hover::before{
+  border: 2px solid #fff;
+  border-left: transparent;
+  border-bottom: transparent;
+  animation-name: slidenextarrow;
+  animation-duration: 0.3s;
+  animation-direction: reverse;
+  animation-fill-mode: initial;
+}
+@keyframes slidenextarrow{
+  0%{
+    opacity: 1;
+    transform: translateX(-2px) rotate(45deg);
+  }
+  100%{
+    opacity: 0;
+    transform: translateX(-100%) rotate(45deg);
+  }
+}
+#title .swiper-button-next::after{
+  content: "NEXT";
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.5s;
+  display: none;
+  font-family: initial;
+}
+#title .swiper-button-next:hover::after{ 
+  display: block;
+  animation-name: slidenext;
+  animation-duration: 0.3s;
+  animation-direction: reverse;
+  animation-fill-mode: initial;
+}
+@keyframes slidenext{
+  0%{
+    opacity: 1;
+    transform: translateX(0%);
+  }
+  100%{
+    opacity: 0;
+    transform: translateX(50%);
+  }
+}
+#title .swiper-pagination{
+  position: absolute;
+  bottom: 25px;
+  left: calc(50% - 60px);
+  width: 120px;
+  display: flex;
+  justify-content: space-between;
+}
+#title .swiper-pagination-bullet{ 
+  padding: 0;
+  width: 25px;
+  height: 5px;
+  border-radius: 3px;
+}
+#title .swiper-pagination-bulletn{
+  display: block;
+  width: 25px;
+  height: 5px;
+  background-color: #999;
+  font-size: 0;
+  transition: all 0.5s;
+  opacity: 1;
+  border-radius: 3px;
+  
+}
+#title .swiper-pagination-bullet-active{
+    background-color: #fff !important;
+    border-radius: 3px;
+}
+/* responsive */
+@media(max-width:768px){
+  #title{
+    padding: 0 0 0 0;
+  }
+  #title .tSildeBtnA{
+    display: none;
+  }
+
+  #title ul.slide li{
+    height: 100vh;
+  }
+  #title ul.slide li h2{    
+    font-size: 40px;
+  }
+  #title ul.slide li p{
+    font-size: 20px;
+    font-weight: 300;
+  }
+  #title ul.slide li a{
+    font-size: 16px;
+  }
+  #title .slide li iframe{
+    width: 600%;
+  }
+  #title .swiper-pagination{
+    opacity: 0;
+  }
+  #title .count{    
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    z-index: 1;
+  }
+  #title .count span{
+    font-size: 20px;
+    font-weight: 400;
+    padding: 0 10px;
+    color: #fff;
+  }
+  #title .count .cCount{
+  }
+  #title .count .tCount{
+    opacity: 0.5;
+  }
+  #title .count .tCount::before{
+    content: "";
+    opacity: 0.5;
+    display: inline-block;
+    width: 2px;
+    height: 20px;
+    background: #fff;
+    transform: rotate(30deg) translateX(-8px) translateY(5px);
+  }
+}

@@ -1,0 +1,67 @@
+@media (max-width: 768px){
+  header h1.h1 a{
+    color: #000;
+  }
+  header .allmenu span{
+    background-color: #000;
+  }
+  header .allmenu::after{
+    background-color: #000;
+  }
+  header .allmenu::before {
+    background-color: #000;
+  }
+  header .right.show{
+    
+  }
+  #title{
+    margin: 150px 0 0 0;
+  }
+  #title .wrap {
+    padding: 0px;  
+  }
+  #title p.h3{    
+    font-size: 45px;
+    font-weight: 500;
+    width: 70%;
+    line-height: 1.4;
+  }
+  #tradeIntro{
+    padding: 50px 0;
+  }
+  #tradeIntro .wrap ul{    
+    justify-content: center;
+    padding: 0;
+  }
+  #tradeIntro .wrap ul li{
+    width: 400px;
+    height: 400px;    
+    margin: 0 0 100px 0;
+  }
+  #tradeIntro .wrap ul li a .textA{
+    z-index: 1;  
+  }
+  #tradeIntro .wrap ul li a .h3{
+    z-index: 0;
+    bottom: -15%;
+    color: #000;
+    left: calc(50% - 85px);
+    width: 170px;
+    text-align: center;
+  }
+  #tradeIntro .wrap ul li a .textA .h2{    
+    font-size: 30px;
+  }
+  #tradeIntro .wrap ul li a .textA .p{    
+    margin: 50px 0px 0px;
+    font-size: 14px;
+  }
+  #tradeIntro .wrap ul li a .textA .btn{
+    margin: 20px 0 0 0;
+  }
+  #tradeIntro .wrap ul li a .textA .btn::before{
+    width: 30px;
+    height: 30px;
+  }
+
+}

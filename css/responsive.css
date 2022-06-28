@@ -1,0 +1,391 @@
+@media (max-width: 768px){
+  header{
+    height: 100px;
+    background-color: transparent;
+  }
+  header.move{
+    background-color: #fff;
+  }
+  header.moveUp{
+    transform: translateY(-100%);
+  }
+  header .container-fluid{
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+  }
+  header .navbar{
+    height: initial;
+    background-color: transparent !important;
+  }
+  header .navbar.show{
+    background-color: #fff !important;
+    opacity: 0.9;
+  }
+  header h1.h1{
+    padding: 0;
+  }
+  header .h1 a{
+    font-size: 20px;
+    color: #fff;
+  }
+  header.move .h1 a{
+    color: #000
+  }
+  header .navbar.show h1.h1 a{
+    color: #000;
+  }
+  header .allmenu {  
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 30px;
+    width: 30px;
+    font-size: 0;
+    transition: all 0.3s;
+    z-index: 1;
+    color: #fff;
+  }
+  header .allmenu::before{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    transform: translateY(7px);
+    transition: all 0.3s;
+  }
+  header.move .allmenu::before{
+    background-color: #000;
+  }
+  header .allmenu span{  
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    transition: all 0.3s;
+  }
+  header.move .allmenu span{
+    background-color: #000;
+  }
+  header .allmenu::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    transition: all 0.3s;
+  }
+  header.move .allmenu::after{
+    background-color: #000;
+  }
+  header .allmenu.x::before{
+    transform: translateY(16.5px) rotate(-45deg);
+  }
+  header .allmenu.x span{  
+    transform: translateY(0px) translateX(-30px) ;
+    opacity: 0;
+  }
+  header .allmenu.x::after{
+    transform: translateY(-10.5px) rotate(45deg);
+  }
+  header .navbar.show .allmenu.x span,
+  header .navbar.show .allmenu.x::before,
+  header .navbar.show .allmenu.x::after{
+    background-color: #000;
+  }
+  header .right{
+    display: none;    
+  }
+  header .right.show{
+    height: 100vh;
+    justify-content: start;
+    align-items: start;
+    padding: 15% 5% 0 5%;
+    transition: all 0.3s;
+    display: flex;
+  }
+  header .right.hide{
+    display: none;
+  }
+  header ul.gnb{
+    align-items: start;
+  }
+  header ul.gnb > li{
+    width: 100%;
+  }
+  header ul.gnb li a{
+    padding: 20px 0;
+    font-size: 40px;
+    font-weight: 500;
+    color: #000;
+    width: 100%;
+    text-align: left;
+  }
+  header ul.gnb li:hover .sub{
+    display: none;
+  }
+  header ul.enb{
+    display: none;
+  }
+  header ul.gnb li .sub{
+    opacity: 1;
+    display: none;
+    position: static;
+    background-color: #eee;
+    transition: initial;
+    width: 100% !important;
+  }
+  header ul.gnb li .sub li a{    
+    color: #000;
+    background-color: initial;
+    font-size: 20px;
+    margin: 0;
+    padding: 20px;
+  }
+  header ul.gnb li h2.h4::after{    
+    display: none;
+  }
+  /*  main  */  
+  #go ul li a{    
+    height: 190px;
+    padding: 40px;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    border: none;
+    background-color: #ddd;
+    color: #fff;
+    border-radius: 0;
+  }
+  #go .swiper-slide-active a{
+    background-color: #000;
+  }
+  #go ul li a .p{    
+    width: 100%;
+    font-size: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  #go .h2{    
+    font-size: 40px;
+    line-height: 1.4;
+  }
+  #go ul li a .h3::after{
+    display: none;
+  }
+  #go ul li a::after{
+    display: none;
+  }
+  #go .goSlideBtnA{
+    display: none;
+  }
+  #go .count{    
+    top: 102%;
+  }
+  #go .count span{
+    font-size: 20px;
+  }
+  #trade .wrap,
+  #pharmaceuticals .wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #trade hgroup, 
+  #pharmaceuticals hgroup{
+    justify-content: center;
+  }
+  #trade hgroup h2.h2,
+  #pharmaceuticals hgroup h2.h2{    
+    font-size: 45px;
+  }
+  #trade .p, #pharmaceuticals .p{
+    font-weight: 300;
+    font-size: 20px;
+    text-align: justify;
+  }
+  #trade ul, 
+  #pharmaceuticals ul{
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  #trade ul li, 
+  #pharmaceuticals ul li{
+    width: 100%;
+  }
+  #trade ul li a, 
+  #pharmaceuticals ul li a{    
+    max-width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #trade ul li a::before, 
+  #pharmaceuticals ul li a::before{
+    width: 450px;
+    height: 450px;
+    max-width: 100%;
+  }
+   #pharmaceuticals ul li a::before{    
+    border-radius: 225px;
+  }
+  #search .h2{
+    font-size: 40px;
+    padding: 0 15px;
+    width: 60%;
+    line-height: 1.4;
+    font-weight: 500;    
+  }
+  #search .inputA{    
+    gap: 0;
+    justify-content: initial;
+    position: relative;
+  }
+  #search div.search{    
+    width: 30%;
+    margin: 0 10px;
+  }
+  #search input{    
+    width: 70%;
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    padding: 30px;
+    border-radius: 45px;
+  }
+  #search input + a{    
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    right: 6%;
+    top: calc(50% - 16px);
+    font-size: 0;
+    background-color: transparent;
+    font-size: 0;
+    display: block;
+    width: 32px;
+    height: 32px;
+    background-image: url(../img/search.svg);
+    background-size: 100%;
+  }
+  #search ul{
+    display: none;
+  }
+  #news .wrap{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  #news .news{    
+    width: 100%;
+    padding: 0;
+  }
+  #news .news ul{
+    width: 100%;      
+    justify-content: center;
+  }
+  #news .news ul li{
+    width: calc(100% / 2 - 10px);
+  }
+  #news .news ul li a{
+    width: 100%;    
+  }
+  #news .news ul li a::before{
+    width: 40vw;
+    height: 40vw;
+  }
+  #news .news ul li a .h3{
+    width: 100%;
+  }
+  #news .news ul li a .p{
+    width: 100%;
+  }
+  #news .sns{    
+    width: 100%;
+  }
+  #news .sns > a{
+    display: flex;
+    flex-direction: column;
+  }
+  #news .sns a .p{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #news .sns a .p::before{
+    width: 300px;
+    height: 300px;
+  }
+  /*  footer  */
+  footer .wrap{
+    padding: 50px 30px;
+  }
+  footer .left{
+    display: none;
+  }
+  footer .right{
+    width: 100%;
+    padding: 0;
+  }
+  footer .right .top{
+    display: none;
+  }
+  footer .right .bottom{    
+    width: 100%;
+    height: 100%;
+  }
+  footer .right .bottom h3{    
+    margin: 0 0 20px 0;
+  }
+  footer .right .bottom p.copy {
+    margin-top: 80px;
+  }
+  footer .right .bottom address span:nth-of-type(2)::before{
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 15px;
+    background-color: #111;
+    margin: 0 5px;
+    transform: translateX(-2px) translateY(2px);
+  }
+  footer .right .bottom address span:nth-of-type(2)::after{
+    content: "";
+    display: inline-block;
+    width: 26%;
+  }
+  footer .right .bottom address span:nth-of-type(3)::before{
+    content: "";
+    display: none;
+  }
+  footer .right .bottom address span:nth-of-type(3)::after{
+    content: "";
+    display: inline-block;
+  }
+  footer .right .bottom address span:nth-of-type(4)::before{
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 15px;
+    background-color: #111;
+    margin: 0 5px;
+    transform: translateX(-2px) translateY(2px);
+  }
+    footer .right .bottom address span:nth-of-type(4)::after{
+    content: "";
+    display: inline-block;
+    width: 30%;
+  }
+  footer .right .bottom address span:nth-of-type(5)::before{
+    content: "";
+    display: none;
+  }
+
+}

@@ -1,0 +1,23 @@
+header ul.gnb li:nth-of-type(3) h2.h4::after{
+  content: "";
+  display: block;
+  width: 5px;
+  height: 5px;
+  background-color: #ccc;
+  transform: translateY(-30px);
+  transition: all 0.3s;
+}
+#title { 
+  height: fit-content;
+  margin: 300px 0 150px; 
+}
+#title .wrap {
+  width: calc(100% - 60px);
+  padding: 0px 70px;
+  box-sizing: border-box; 
+}
+#title h2.h2 { 
+  font-size: 80px;
+  letter-spacing: -1px;
+  font-weight: 700;
+}

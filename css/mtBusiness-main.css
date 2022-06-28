@@ -1,0 +1,409 @@
+main {
+    
+}
+section .wrap{
+  padding: 150px 70px;
+  box-sizing: border-box;
+  display: flex;
+  width: calc(100% - 60px);
+
+}
+section .h2Wrap{
+  overflow: hidden;
+  height: fit-content;
+  display: block;
+}
+#function {
+}
+
+#function .wrap {
+  padding: 0 70px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+
+#function .txtA {
+  display: block;
+  width: 50%;
+  background: #d60000;
+  color: #fff;
+  font-size: 30px;
+  font-weight: 400;
+  padding: 230px 70px 0 70px;
+  box-sizing: border-box;
+  line-height: 1.5;
+}
+
+#function .imgA{
+  width: 50%;
+  background: #200020;
+}
+
+#function img {
+  width: 100%;
+}
+
+#business {
+
+}
+
+#business .wrap {
+  padding: 150px 0;
+  display: flex;
+  border-bottom: 1px solid #ddd;
+  margin: 0px 100px;
+}
+
+#business .h2Wrap {
+  width: 25%;
+  height: fit-content;
+  margin: 30px 0;
+}
+
+#business .h2Wrap .h2 {
+
+}
+
+#business .p {
+  width: 75%;
+  font-size: 22px;
+  letter-spacing: -1px;
+}
+
+#mainItems {
+
+}
+
+#mainItems .wrap {
+
+}
+
+#mainItems .h2Wrap {
+  width: 20%;
+  margin: 60px 0 30px;
+}
+
+#mainItems .h2Wrap .h2 {
+
+}
+
+#mainItems .list {
+
+  display: flex;
+  width: 80%;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+#mainItems .list li {
+
+  width: calc(25% - 100px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 50px;
+}
+
+#mainItems .list li img {
+
+}
+
+#mainItems .list li .h3 {
+  font-size: 20px;
+  opacity: 0.4;
+  margin-top: 30px;
+}
+
+#affiliate {
+
+  background: #f9f9f9;
+}
+
+#affiliate .wrap {
+}
+
+#affiliate .h2Wrap {
+
+  width: 20%;
+  padding: 40px 0;
+}
+
+#affiliate .h2Wrap .h2 {
+
+}
+
+#affiliate .afList {
+
+  width: 80%;
+}
+
+#affiliate .afList li {
+
+}
+
+#affiliate .afList li .h3{
+  font-size: 30px;
+  font-weight: 400;
+  padding: 50px 0;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+#affiliate .afList li .h3.borderB{
+  border-color: #000;
+}
+
+#affiliate .afList li .h3::after{
+  content: '';
+  background-image: url(../img/arrow-down.png);
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-size: 100%;
+  float: right;
+  transition: all 0.5s;
+}
+#affiliate .afList li .h3.rot180::after{
+  transform: rotate(180deg);
+}
+#affiliate .afList li .slideA{
+  display: flex;
+  border-bottom: 1px solid #ddd;
+}
+
+#affiliate .afList li a {
+  width: 25%;
+}
+
+#affiliate .afList li a img {
+  width: 250px;
+  padding: 60px 20px 70px 0;
+}
+
+#affiliate .afList li .p {
+  padding: 50px 25px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+#afLo{
+  
+  padding: 100px 0;
+}
+#afLo .wrap{
+  
+}
+
+#afLo .h2{
+  
+}
+
+#afLo .map{
+  padding: 0px 70px 150px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+#afLo .map .imgA{  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#afLo .map .imgA img{
+  
+  width: 100%;
+}
+
+#afLo .map .dotA{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+
+#afLo .map .dotA:nth-child(2){
+  top: 18%;
+  left: 6%;
+}
+
+#afLo .map .dotA:nth-child(3){
+  top: 56%;
+  left: 50%;
+}
+
+#afLo .map .dotA:nth-child(4){
+  top: 46%;
+  left: 60%;
+}
+#afLo .map .dotA .dotWrap{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+}
+#afLo .map .dotA .dotWrap::before{
+  content: '';
+  display: block;
+  border-radius: 40px;
+  background: #000;
+  opacity: 0.1;
+  position: absolute;
+  transition: all 0.5s;
+  width: 0;
+  height: 0;
+}
+#afLo .map .dotA.show .dotWrap::before{
+  width: 80px;
+  height: 80px;
+}
+#afLo .map .dotA .dotWrap::after{
+  content: '';
+  width: 1px;
+  height: 40px;
+  background: #000;
+  transform: translateY(-20px);
+  transition: all 0.5s;
+  height: 0;
+  transform: rotate();
+}
+#afLo .map .dotA.show .dotWrap::after{
+  height: 40px;
+}
+#afLo .map .dotA .dotWrap .dot{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#afLo .map .dotA .dotWrap .dot::before{
+  content: '';
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 25px;
+  background: #000;
+  opacity: 0.1;
+  position: absolute;
+}
+
+#afLo .map .dotA .dotWrap .dot::after{ 
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 25px;
+  background: #000;
+  position: absolute;
+}
+
+#afLo .map .dotA .p{  
+  font-size: 20px;
+  font-weight: 700;
+  padding: 10px 45px;
+  border-radius: 24px;
+  background: #000;
+  color: #fff;
+  margin: 10px auto 0;
+  transition: all 1s;
+  opacity: 0;
+}
+
+#afLo .map .dotA.show .p{
+  opacity: 1;
+}
+
+#afLo .map .dotA .p span{
+  
+}
+
+#inquiry {  
+  background-color: #1a1a1a;
+  width: 100%;
+  height: 400px;
+}
+
+#inquiry .wrap {  
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  max-width: initial;
+}
+
+#inquiry .mtinquiry {  
+  width: 100%;
+  height: 100%;
+}
+
+#inquiry .mtinquiry a {  
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  padding: 100px 90px;
+  display: flex;
+  transition: all 0.5s;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: start;
+}
+
+#inquiry .mtinquiry a:hover{
+  background-color: #d60000
+}
+
+#inquiry .mtinquiry a .h2 {  
+  margin: 0 0 50px;
+  letter-spacing: -2px;
+  width: 100%;
+}
+
+#inquiry .mtinquiry a .h2::after{
+  content: '';
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  transform: rotate(45deg) translateX(10px) translateY(-20px);
+  border-top: 5px solid;
+  border-right: 5px solid;
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+#inquiry .mtinquiry a:hover .h2::after{
+  opacity: 1;
+}
+
+#inquiry .mtinquiry a .phone,
+#inquiry .mtinquiry a .email{  
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0 10px;
+}
+
+#inquiry .mtinquiry a .phone span,
+#inquiry .mtinquiry a .email span{
+  opacity: 0.6;
+  font-weight: 400;
+}
+
+#inquiry .mtinquiry a .cs {
+  margin: 20px 0 0 0;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+#inquiry .mtinquiry a .cs span{
+  opacity: 0.6;
+  font-weight: 400;
+}
